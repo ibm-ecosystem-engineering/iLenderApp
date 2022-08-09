@@ -1,0 +1,245 @@
+<ibm-modal class="trace-product-dialog" size="sm" (overlaySelected)="closeModal()">
+    <ibm-modal-header (closeSelect)="closeModal()" class="modal-header">
+        
+    </ibm-modal-header>
+    <section>
+            <div class="formTitle">Edit</div>
+
+            <ibm-accordion>
+                    <ibm-accordion-item title="Self" >
+
+                            <form class="addUserForm wmForm" action="">
+                                    <div class="layerOne">
+                                      <div class="lhs">
+                                        <div class="bx--form-item bx--text-input-wrapper">
+                                          <div class="bx--text-input__field-wrapper">
+                                            <input id="text-input-3" type="text" class="bx--text-input bx--text-input--light" placeholder="First Name">
+                                          </div>
+                                        </div>
+                
+                                        <div class="bx--form-item bx--text-input-wrapper">
+                                          <div class="bx--text-input__field-wrapper">
+                                            <input id="text-input-3" type="text" class="bx--text-input bx--text-input--light" placeholder="Last Name">
+                                          </div>
+                                        </div>
+                
+                                        <div class="bx--form-item">
+                                          <div data-numberinput class=" bx--number bx--number--light ">
+                                            <div class="bx--number__input-wrapper">
+                                              <input id="number-input0" type="number" min="0" max="100" value="" placeholder="age">  
+                                          </div>
+                                        </div>
+                                        </div>
+                
+                                        <fieldset class="bx--fieldset">
+                                          <legend class="bx--custom-label">Gender</legend>
+                                          <ibm-radio-group name="radioGroup"  >
+                                            <ibm-radio value="male" [checked]="">
+                                              Male
+                                            </ibm-radio>
+                                            <ibm-radio value="female" [checked]="">
+                                              Female
+                                            </ibm-radio>
+                                          </ibm-radio-group>
+                                        </fieldset>
+                                          <fieldset class="bx--fieldset padding-left">
+                                                <label class="custom-label">Marital Status</label>
+                                                <ibm-radio-group name="radioGroup" [(ngModel)]="gender" (change)="onChange($event)">
+                                                  <ibm-radio value="male" [checked]="">
+                                                    Single
+                                                  </ibm-radio>
+                                                  <ibm-radio value="female" [checked]="">
+                                                    Married
+                                                  </ibm-radio>
+                                                </ibm-radio-group>
+                                              </fieldset>
+
+                                        <ibm-dropdown
+                                        [label]="'Marital Status'"
+                                        [theme]="'dark'"
+                                        placeholder="Select"
+                                        >
+                                        <ibm-dropdown-list [items]="maritalStatus"></ibm-dropdown-list>
+                                    </ibm-dropdown>
+                
+                                       
+                
+                                              <div class="bx--form-item bx--text-input-wrapper">
+                                                    <div class="bx--text-input__field-wrapper">
+                                                      <input id="text-input-3" type="text" class="bx--text-input bx--text-input--light" placeholder="Number of children">
+                                                    </div>
+                                                  </div>
+                
+                                             
+                
+                                        
+                                      </div>
+                                      <div class="rhs">
+                                            <div class="bx--form-item bx--text-input-wrapper">
+                                                    <div class="bx--text-input__field-wrapper">
+                                                      <input id="text-input-3" type="text" class="bx--text-input bx--text-input--light" placeholder="Mobile Number">
+                                                    </div>
+                                                  </div>
+                                           
+                                            <div class="bx--form-item bx--text-input-wrapper">
+                                                    <div class="bx--text-input__field-wrapper">
+                                                      <input id="text-input-3" type="text" class="bx--text-input bx--text-input--light" placeholder="Average income per month">
+                                                    </div>
+                                                  </div>
+                                                  <div class="bx--form-item">
+                                                        <label for="text-area-2" class="bx--label">Address</label>
+                                                        <div class="bx--text-area__wrapper">
+                                                          <textarea id="text-area-2" class="bx--text-area bx--text-area--v2" rows="2" cols="50"
+                                                            placeholder="Address"></textarea>
+                                                        </div>
+                                                      </div>
+                                                 
+                                        <div class="bx--form-item">
+                                          <div class="bx--select bx--select--light">
+                                            <div class="bx--select-input__wrapper" *ngIf="countriesList">
+                                              <select id="select-id-disabled" class="bx--select-input" >
+                                                <option class="bx--select-option" value="" disabled selected hidden>Country </option>
+                                                <option class="bx--select-option" *ngFor="let country of countriesList" value="{{country.code}}">
+                                                  {{country.name}}</option>
+                                              </select>
+                                              <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                                                xmlns="http://www.w3.org/2000/svg" class="bx--select__arrow" width="10" height="6" viewBox="0 0 10 6"
+                                                aria-hidden="true">
+                                                <path d="M5 6L0 1 .7.3 5 4.6 9.3.3l.7.7z"></path>
+                                              </svg>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="bx--form-item bx--text-input-wrapper">
+                                          <div class="bx--text-input__field-wrapper">
+                                            <input id="text-input-3" type="text" class="bx--text-input bx--text-input--light" placeholder="City">
+                                          </div>
+                                        </div>
+                                        <div class="bx--form-item bx--text-input-wrapper">
+                                          <div class="bx--text-input__field-wrapper">
+                                            <input id="text-input-3" type="text" class="bx--text-input bx--text-input--light" placeholder="ZIP Code">
+                                          </div>
+                                        </div>
+                                        
+                                      </div>
+                                      <div class="bx--form-item submit-btn">
+                                            <button class="bx--btn bx--btn--primary" type="button">Submit</button>
+                                          </div>
+                                    </div>
+                                  </form>
+
+                    </ibm-accordion-item>
+                    <ibm-accordion-item title="Spouse" > 
+                            <form class="addUserForm wmForm" action="">
+                                    <div class="layerOne">
+                                      <div class="lhs">
+
+                                        <div class="bx--form-item bx--text-input-wrapper">
+                                          <div class="bx--text-input__field-wrapper">
+                                            <input id="text-input-3" type="text" class="bx--text-input bx--text-input--light" placeholder="First Name">
+                                          </div>
+                                        </div>
+                
+                                        <div class="bx--form-item bx--text-input-wrapper">
+                                          <div class="bx--text-input__field-wrapper">
+                                            <input id="text-input-3" type="text" class="bx--text-input bx--text-input--light" placeholder="Last Name">
+                                          </div>
+                                        </div>
+                
+                                        <div class="bx--form-item">
+                                          <div data-numberinput class=" bx--number bx--number--light ">
+                                            <div class="bx--number__input-wrapper">
+                                              <input id="number-input0" type="number" min="0" max="100" value="" placeholder="age">  
+                                          </div>
+                                        </div>
+                                        </div>
+                                      </div>
+                                      <div class="rhs">
+                                           
+                                            <fieldset class="bx--fieldset padding-left">
+                                                    <label class="custom-label">Marital Status</label>
+                                                    <ibm-radio-group name="radioGroup">
+                                                      <ibm-radio value="male" [checked]="">
+                                                        Single
+                                                      </ibm-radio>
+                                                      <ibm-radio value="female" [checked]="">
+                                                        Married
+                                                      </ibm-radio>
+                                                    </ibm-radio-group>
+                                                  </fieldset>
+                                            <div class="bx--form-item bx--text-input-wrapper">
+                                                    <div class="bx--text-input__field-wrapper">
+                                                      <input id="text-input-3" type="text" class="bx--text-input bx--text-input--light" placeholder="Mobile Number">
+                                                    </div>
+                                                  </div>
+                                           
+                                            <div class="bx--form-item bx--text-input-wrapper">
+                                                    <div class="bx--text-input__field-wrapper">
+                                                      <input id="text-input-3" type="text" class="bx--text-input bx--text-input--light" placeholder="Average income per month">
+                                                    </div>
+                                      </div>
+                                     
+                                    </div>
+                                    <div class="bx--form-item submit-btn">
+                                            <button class="bx--btn bx--btn--primary" type="button">Submit</button>
+                                          </div>
+                                    </div>
+                                  </form>
+                    </ibm-accordion-item>
+                    <ibm-accordion-item title="Child">
+                            <form class="addUserForm wmForm" action="">
+                                    <ibm-dropdown
+                                    [label]="'label'"
+                                    [helperText]="helperText"
+                                    [theme]="'dark'"
+                                    placeholder="Select"
+                                    [disabled]="disabled">
+                                    <ibm-dropdown-list [items]="childrens"></ibm-dropdown-list>
+                                </ibm-dropdown>
+                                    <div class="layerOne">
+                                           
+                                      <div class="lhs">
+
+                                        <div class="bx--form-item bx--text-input-wrapper">
+                                          <div class="bx--text-input__field-wrapper">
+                                            <input id="text-input-3" type="text" class="bx--text-input bx--text-input--light" placeholder="First Name">
+                                          </div>
+                                        </div>
+                
+                                        <div class="bx--form-item bx--text-input-wrapper">
+                                          <div class="bx--text-input__field-wrapper">
+                                            <input id="text-input-3" type="text" class="bx--text-input bx--text-input--light" placeholder="Last Name">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="rhs">
+                                            <fieldset class="bx--fieldset padding-left">
+                                                    <label class="custom-label">Marital Status</label>
+                                                    <ibm-radio-group name="radioGroup" >
+                                                      <ibm-radio value="male" [checked]="">
+                                                        Single
+                                                      </ibm-radio>
+                                                      <ibm-radio value="female" [checked]="">
+                                                        Married
+                                                      </ibm-radio>
+                                                    </ibm-radio-group>
+                                                  </fieldset>
+                                            <div class="bx--form-item">
+                                                    <div data-numberinput class=" bx--number bx--number--light ">
+                                                      <div class="bx--number__input-wrapper">
+                                                        <input id="number-input0" type="number" min="0" max="100" value="" placeholder="age">  
+                                                    </div>
+                                                  </div>
+                                                  </div>
+                                      </div>
+                                    </div>
+                                      </form>
+                            <div class="bx--form-item submit-btn">
+                                    <button class="bx--btn bx--btn--primary" type="button">Submit</button>
+                                  </div>
+                   </ibm-accordion-item>
+                </ibm-accordion>
+                  <!-- <div class="infoBlock" *ngIf="editUserData">EDIT :: {{editUserData | json}}</div> -->
+                  <!--   -->
+    </section>
+</ibm-modal>

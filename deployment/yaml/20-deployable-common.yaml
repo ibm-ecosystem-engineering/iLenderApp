@@ -1,0 +1,111 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ilender-configmap-urls
+  namespace: ilender-ns
+  labels:
+    app: ilender-application
+    subname: configmap
+data:
+  urlLoanservice: http://ilender-loan:9090/loan
+  urlUserservice: http://ilender-user:9090/user
+  urlCustomerprofileservice: http://ilender-customerprofile:9090/customerprofile
+  urlOpenbankingservice: http://ilender-openbanking:9090/openbanking
+  urlBigbankservice: http://ilender-bigbank:9090/bigbank
+  urlGreatbankservice: http://ilender-greatbank:9090/greatbank
+  urlCreditscoreservice: http://ilender-creditscore:9090/creditscore
+  urlLoanprocessorservice: http://ilender-loanprocessor:9090/loanprocessor
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ilender-configmap-db
+  namespace: ilender-ns
+  labels:
+    app: ilender-application
+    subname: configmap
+data:
+  # ## DB2
+  # datasourceUrl: jdbc:db2://1.2.3.4:12345/ilender
+  # datasourceUserName: 1
+  # datasourcePassword: 1
+  # datasourceDriverClassName: com.ibm.db2.jcc.DB2Driver
+  # datasourceJpaDatabasePlatform: org.hibernate.dialect.DB2Dialect
+
+  # ## MySql
+  # datasourceUrl: jdbc:jdbc:mysql://1.1.1.1:3306/ilender
+  # datasourceUserName: 1
+  # datasourcePassword: 1
+
+  ## H2
+  datasourceUrl: jdbc:h2:mem:/ilender
+  datasourceUserName: admin
+  datasourcePassword: admin
+  datasourceDriverClassName: org.h2.Driver
+  datasourceJpaDatabasePlatform: org.hibernate.dialect.H2Dialect
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ilender-configmap-mq
+  namespace: ilender-ns
+  labels:
+    app: ilender-application
+    subname: configmap
+data:
+  greatbankMqQueueManager: qmgr
+  greatbankMqConnName: ilender-qm-ibm-mq.banking(1414)
+  greatbankMqChannel: DEV.APP.SVRCONN
+  greatbankMqQueueNameRequestLoanOffer: DEV.QUEUE.1
+  greatbankMqQueueNameRequestLoanDetail: DEV.QUEUE.2
+  greatbankMqQueueNameRequestTransHistory: DEV.QUEUE.3
+  greatbankMqQueueNameRequestLoanHistory: PROD.QUEUE.1
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ilender-configmap-eventstream
+  namespace: ilender-ns
+  labels:
+    app: ilender-application
+    subname: configmap
+data:
+  iLenderEventstreamTopicRequestLoanOffer: ilender-request-loan-offer
+  iLenderEventstreamTopicRequestLoanDetail: ilender-request-loan-detail
+  iLenderEventstreamTopicNotifyLoanRequestApproved: ilender-notify-loan-request-approved
+  iLenderEventstreamTopicNotifyLoanOfferAccepted: ilender-notify-loan-offer-accepted
+  iLenderEventstreamTopicNotifyLoanRequestCreated: ilender-notify-loan-request-created
+  iLenderEventstreamServerUrl: eventstreams-kafka-bootstrap-integration.gsidemos-7ec5d722a0ab3f463fdc90eeb94dbc70-0000.us-south.containers.appdomain.cloud:443
+  iLenderEventstreamTruststoreLocation: /opt/ilender-eventstream.jks
+  iLenderEventstreamTruststorePassword: changeit
+  iLenderEventstreamSCRAMUserName: ilender
+  iLenderEventstreamSCRAMPassword: test
+  iLenderKafkaEnabled: "false"
+  iLenderNotifyEnabled: "false"
+  iLenderApiConnectEnabled: "false"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ilender-configmap-common
+  namespace: ilender-ns
+  labels:
+    app: ilender-application
+    subname: configmap
+data:
+  logType: DEFAULT
+  # logType: LOG_DNA
+  # logType: HUMIO
+  logHost: ocp-gsi
+  humioUrl: http://1.1.1.1:8080/api/v1/ingest/humio-unstructured
+  humioToken: aaaa
+  logdnaUrl: aaaaa
+  logdnaToken: "1111"
+  loadSimulation: "TRUE"
+  increaseSizeInKB: "50240"
+  maxIncreaseSizeInKB: "500240"
+  initialSleepMilliSeconds: "300000"
+  incrementSleepMilliSeconds: "1000"
+  incrementSleepForRequest: "1"
+  DEBUG_LOG: "TRUE"
+---

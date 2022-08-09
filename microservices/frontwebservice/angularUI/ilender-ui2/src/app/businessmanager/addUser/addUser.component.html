@@ -1,0 +1,225 @@
+<div>
+  <!-- <div class="breadCrumbs">
+    <ul>
+      <li>
+        <a [routerLink]="['/']">Business Manager</a><span>></span>
+        <a [routerLink]="['/']">Wealth Manager</a><span>></span>
+        <span class="current" *ngIf="wm; else cs">Add Wealth Manager</span>
+        <ng-template #cs>
+          <span class="current">Add Customer</span>
+        </ng-template>
+    </ul>
+  </div> -->
+  <button class="closeContainer" (click)="closeAddBlock(false)">
+    <img src="../../../../assets/images/close.svg" alt="">
+  </button>
+  <form class="addUserForm wmForm" action="" *ngIf="wm; else csForm">
+    <div class="formTitle">Add Wealth Manager</div>
+    <div class="layerOne">
+      <div class="lhs">
+        <div class="bx--form-item bx--text-input-wrapper">
+          <!-- <label for="text-input-3" class="bx--label">First Name</label> -->
+          <div class="bx--text-input__field-wrapper">
+            <input id="text-input-3" type="text" class="bx--text-input bx--text-input--light" [(ngModel)]="mainDataWm.firstName" name="firstName" placeholder="First Name">
+          </div>
+        </div>
+        <div class="bx--form-item bx--text-input-wrapper">
+          <!-- <label for="text-input-3" class="bx--label">Last Name</label> -->
+          <div class="bx--text-input__field-wrapper">
+            <input id="text-input-3" type="text" class="bx--text-input bx--text-input--light" [(ngModel)]="mainDataWm.lastName" name="lastName" placeholder="Last Name">
+          </div>
+        </div>
+        <div class="bx--form-item">
+          <div data-numberinput class=" bx--number bx--number--light ">
+            <!-- <label for="number-input0" class="bx--label">Age</label> -->
+            <div class="bx--number__input-wrapper">
+              <input id="number-input0" type="number" min="0" max="100" value="" [(ngModel)]="mainDataWm.age"  name="age" placeholder="age">
+              <div class="bx--number__controls">
+                <button aria-label="increase number input" class="bx--number__control-btn up-icon" type="button"
+                  aria-live="polite" aria-atomic="true">
+                  <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                    xmlns="http://www.w3.org/2000/svg" width="8" height="4" viewBox="0 0 8 4" aria-hidden="true">
+                    <path d="M0 4l4-4 4 4z"></path>
+                  </svg>
+                </button>
+                <button aria-label="decrease number input" class="bx--number__control-btn down-icon" type="button"
+                  aria-live="polite" aria-atomic="true">
+                  <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                    xmlns="http://www.w3.org/2000/svg" width="8" height="4" viewBox="0 0 8 4" aria-hidden="true">
+                    <path d="M8 0L4 4 0 0z"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <fieldset class="bx--fieldset">
+          <legend class="bx--custom-label">Gender</legend>
+          <ibm-radio-group name="radioGroup" [(ngModel)]="mainDataWm.gender"  name="gender" (change)="onChange($event)">
+            <ibm-radio value="male" [checked]="">
+              Male
+            </ibm-radio>
+            <ibm-radio value="female" [checked]="">
+              Female
+            </ibm-radio>
+          </ibm-radio-group>
+        </fieldset>
+        <div class="bx--form-item">
+          <label for="text-area-2" class="bx--label">Address</label>
+          <div class="bx--text-area__wrapper">
+            <textarea id="text-area-2" class="bx--text-area bx--text-area--v2" rows="2" cols="50" [(ngModel)]="mainDataWm.address" name="address" placeholder="Address"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="rhs">
+        <div class="bx--form-item">
+          <div class="bx--select bx--select--light">
+            <!-- <label for="select-id" class="bx--label">Country</label> -->
+            <div class="bx--select-input__wrapper">
+              <select id="select-id-disabled" class="bx--select-input" *ngIf="countriesList"  [(ngModel)]="mainDataWm.country" name="country" >
+                <option class="bx--select-option" value="" disabled selected hidden>Country </option>
+                <option class="bx--select-option" *ngFor="let country of countriesList" value="{{country.code}}">
+                  {{country.name}}</option>
+              </select>
+              <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                xmlns="http://www.w3.org/2000/svg" class="bx--select__arrow" width="10" height="6" viewBox="0 0 10 6"
+                aria-hidden="true">
+                <path d="M5 6L0 1 .7.3 5 4.6 9.3.3l.7.7z"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="bx--form-item bx--text-input-wrapper">
+          <!-- <label for="text-input-3" class="bx--label">First Name</label> -->
+          <div class="bx--text-input__field-wrapper">
+            <input id="text-input-3" type="text" class="bx--text-input bx--text-input--light" [(ngModel)]="mainDataWm.city"  name="city" placeholder="City">
+          </div>
+        </div>
+        <div class="bx--form-item bx--text-input-wrapper">
+          <!-- <label for="text-input-3" class="bx--label">First Name</label> -->
+          <div class="bx--text-input__field-wrapper">
+            <input id="text-input-3" type="text" class="bx--text-input bx--text-input--light" [(ngModel)]="mainDataWm.emailId"  name="emailId" placeholder="Email id">
+          </div>
+        </div>
+        <div class="bx--form-item submit-btn">
+          <button class="bx--btn bx--btn--primary" type="button" (click)="saveWealthmanager(false)">Submit</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <ng-template #csForm>
+    <form class="addUserForm custform" action="">
+      <div class="formTitle">Add Customer</div>
+      <div class="layerOne">
+        <div class="lhs">
+          <div class="bx--form-item bx--text-input-wrapper">
+            <!-- <label for="text-input-3" class="bx--label">First Name</label> -->
+            <div class="bx--text-input__field-wrapper">
+              <input id="text-input-3" type="text" class="bx--text-input bx--text-input--light"  [(ngModel)]="mainDataCs.firstName"  name="firstName" 
+                placeholder="First Name">
+            </div>
+          </div>
+          <div class="bx--form-item bx--text-input-wrapper">
+            <!-- <label for="text-input-3" class="bx--label">Last Name</label> -->
+            <div class="bx--text-input__field-wrapper">
+              <input id="text-input-3" type="text" class="bx--text-input bx--text-input--light"  [(ngModel)]="mainDataCs.lastName"   name="lastName" placeholder="Last Name">
+            </div>
+          </div>
+          <div class="bx--form-item">
+            <div data-numberinput class=" bx--number bx--number--light ">
+              <!-- <label for="number-input0" class="bx--label">Age</label> -->
+              <div class="bx--number__input-wrapper">
+                <input id="number-input0" type="number" min="0" max="100" value=""  [(ngModel)]="mainDataCs.age"   name="age" placeholder="age">
+                <div class="bx--number__controls">
+                  <button aria-label="increase number input" class="bx--number__control-btn up-icon" type="button"
+                    aria-live="polite" aria-atomic="true">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                      xmlns="http://www.w3.org/2000/svg" width="8" height="4" viewBox="0 0 8 4" aria-hidden="true">
+                      <path d="M0 4l4-4 4 4z"></path>
+                    </svg>
+                  </button>
+                  <button aria-label="decrease number input" class="bx--number__control-btn down-icon" type="button"
+                    aria-live="polite" aria-atomic="true">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                      xmlns="http://www.w3.org/2000/svg" width="8" height="4" viewBox="0 0 8 4" aria-hidden="true">
+                      <path d="M8 0L4 4 0 0z"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bx--form-item bx--text-input-wrapper">
+            <!-- <label for="text-input-3" class="bx--label">First Name</label> -->
+            <div class="bx--text-input__field-wrapper">
+              <input id="text-input-3" type="text" class="bx--text-input bx--text-input--light"  [(ngModel)]="mainDataCs.mobileNo"   name="mobileNo" placeholder="Mobile Number">
+            </div>
+          </div>
+          <fieldset class="bx--fieldset">
+            <legend class="bx--custom-label">Gender</legend>
+            <ibm-radio-group name="genderRadioGroup"  [(ngModel)]="mainDataCs.gender"   name="gender" (change)="onChange($event)">
+              <ibm-radio value="male" [checked]="">
+                Male
+              </ibm-radio>
+              <ibm-radio value="female" [checked]="">
+                Female
+              </ibm-radio>
+            </ibm-radio-group>
+          </fieldset>
+          <fieldset class="bx--fieldset">
+            <legend class="bx--custom-label">Status</legend>
+            <ibm-radio-group name="statusRadioGroup"  [(ngModel)]="mainDataCs.married"   name="married" (change)="onChange($event)">
+              <ibm-radio value="true" [checked]="">
+                Married
+              </ibm-radio>
+              <ibm-radio value="false" [checked]="">
+                Unmarried
+              </ibm-radio>
+            </ibm-radio-group>
+          </fieldset>
+        </div>
+        <div class="rhs">
+          <div class="bx--form-item">
+            <label for="text-area-2" class="bx--label">Address</label>
+            <div class="bx--text-area__wrapper">
+              <textarea id="text-area-2" class="bx--text-area bx--text-area--v2" rows="2" cols="50"  [(ngModel)]="mainDataCs.address"   name="address" 
+                placeholder="Address"></textarea>
+            </div>
+          </div>
+          <div class="bx--form-item">
+            <div class="bx--select bx--select--light">
+              <!-- <label for="select-id" class="bx--label">Country</label> -->
+              <div class="bx--select-input__wrapper">
+                <select id="select-id-disabled" class="bx--select-input" *ngIf="countriesList"  [(ngModel)]="mainDataCs.country"   name="country" >
+                  <option class="bx--select-option" value="" disabled selected hidden>Country </option>
+                  <option class="bx--select-option" *ngFor="let country of countriesList" value="{{country.code}}">
+                    {{country.name}}</option>
+                </select>
+                <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+                  xmlns="http://www.w3.org/2000/svg" class="bx--select__arrow" width="10" height="6" viewBox="0 0 10 6"
+                  aria-hidden="true">
+                  <path d="M5 6L0 1 .7.3 5 4.6 9.3.3l.7.7z"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="bx--form-item bx--text-input-wrapper">
+            <!-- <label for="text-input-3" class="bx--label">First Name</label> -->
+            <div class="bx--text-input__field-wrapper">
+              <input id="text-input-3" type="text" class="bx--text-input bx--text-input--light"  [(ngModel)]="mainDataCs.city"   name="city" placeholder="City">
+            </div>
+          </div>
+          <div class="bx--form-item bx--text-input-wrapper">
+            <!-- <label for="text-input-3" class="bx--label">First Name</label> -->
+            <div class="bx--text-input__field-wrapper">
+              <input id="text-input-3" type="text" class="bx--text-input bx--text-input--light"  [(ngModel)]="mainDataCs.emailId"   name="emailId" placeholder="Email Id">
+            </div>
+          </div>
+          <div class="bx--form-item submit-btn">
+            <button class="bx--btn bx--btn--primary" type="button" (click)="saveCustomer(false)">Submit</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </ng-template>
+</div>

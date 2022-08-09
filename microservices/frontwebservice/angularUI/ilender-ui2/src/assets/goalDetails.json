@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Buy a House in a Villa Gated Community",
+        "goal_percent": "60% goal reached in 3/5 years",
+        "target_date": "Aug 2022",
+        "investment_required": "50 lakhs INR",
+        "goal_investment": "5 Lakhs INR",
+        "investment_current_value": "7 Lakhs INR"
+    },
+    {
+        "name": "Travel to Europe",
+        "goal_percent": "80% goal reached in 4/5 years",
+        "target_date": "Aug 2021",
+        "investment_required": "50 lakhs INR",
+        "goal_investment": "6 Lakhs INR",
+        "investment_current_value": "8 Lakhs INR"
+    },
+    {
+        "name": "Save for Child's Higher Education",
+        "goal_percent": "60% goal reached in 3/5 years",
+        "target_date": "Aug 2022",
+        "investment_required": "50 lakhs INR",
+        "goal_investment": "5 Lakhs INR",
+        "investment_current_value": "7 Lakhs INR"
+    }
+]

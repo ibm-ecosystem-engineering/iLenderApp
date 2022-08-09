@@ -1,0 +1,77 @@
+<button class="closeContainer" (click)="closeBlock(false)">
+  <img src="../../../../assets/images/close.svg" alt="">
+</button>
+
+<div class="">
+  <div class="bx--grid">
+    <div class="bx--row">
+      <div class="bx--col">
+        <div class="financial-plan-container" *ngIf="!addGoalPageEnabled">
+          <div ibmCol [columnNumbers]="{'md': 12, 'sm': 12}" *ngFor="let goal of selectedGoal;let goalIndex = index" class="goal-details">
+            <div class="goalDetailsWrapper">
+              <div class="floaterMenu">
+                  <img src="assets/images/more_vert.png" class="height-25" [matMenuTriggerFor]="menu">
+                  <mat-menu #menu="matMenu">
+                      <button mat-menu-item (click)="addInvestment(goal, goalIndex)">
+                        <span>Add Investment</span>
+                      </button>
+                      <button mat-menu-item (click)="deleteGoal(goal, 'delete')">
+                      <span> Delete Goal</span>
+                    </button>
+                  </mat-menu>
+              </div>
+              <div class="details">
+                <div class="name">GOAL # {{goal.goalReference}} : {{goal.goalDesc}} <span
+                    class="goal-percent">{{goal.goalAchievementString }}</span></div>
+                <div class="innerDetailsWrapper">
+                  <div class="utClass">
+                    <span>Target Date: </span><span>{{goal.targetDate}}</span>
+                  </div>
+                  <div class="utClass">
+                    <span>Target Amount: </span><span>{{goal.targetAmount}}</span>
+                  </div>
+                  <div class="utClass">
+                    <span>Invested Amount : </span><span>{{goal.totalInvestmentAmount}}</span>
+                  </div>
+                  <div class="utClass">
+                    <span>Investment Current Value: </span> <span>{{goal.investmentCurrentValue}}</span>
+                  </div>
+                 </div>
+              </div>
+            </div>
+            <!-- table -->
+            <div class="chartsSection">
+                <div class="lhs">
+                    <div class="flex">
+                        <div class="flex-item">
+                            <div style="display: block;">
+                                <canvas baseChart width="400" height="400" [datasets]="goal.graphDataLine" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" [plugins]="lineChartPlugins" (chartHover)="chartHovered($event)"
+                                    (chartClick)="chartClicked($event)"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rhs">
+                    <div class="flex">
+                        <div class="flex-item">
+                            <div style="display: block">
+                                <canvas baseChart [datasets]="goal.graphDataBar" [labels]="barChartLabels" [options]="barChartOptions" [plugins]="barChartPlugins" [colors]="barChartColors"  [legend]="barChartLegend" [chartType]="barChartType">
+                                </canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              <app-table [columnLoanHistory]="columnLoanHistory" [rowsLoanHistory]="rowsLoanHistory" [columnTransHistory]="columnTransHistory" [rowsTransHistory]="rowsTransHistory">
+                </app-table>
+          </div>
+        </div>
+        <add-goal *ngIf="addGoalPageEnabled" [selectedGoal]="selectedGoalDetails" (closeAddContainer)="closeGoalOverView($event)"></add-goal>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Delete user component -->
+<div class="overLay" *ngIf="deleteUserEnabled">
+    <app-delete-goal class="deleteComponent" *ngIf="deleteUserEnabled" [deleteGoal]="deleteSelectedGoal" (closeContainer)="closeGoalOverView($event)"></app-delete-goal>
+</div>

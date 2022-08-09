@@ -1,0 +1,66 @@
+<!-- Users -->
+<div ibmRow>
+  <div ibmCol [columnNumbers]="{'md': 2, 'sm': 12}" *ngFor="let user of userDetails" class="users">
+    <div class="userWrapper">
+      <div class="floaterMenu">
+        <!-- {{typeData}} -->
+        <ibm-overflow-menu *ngIf="typeData == 'wm'; else csBlock">
+          <ibm-overflow-menu-option>
+            <button class="bx--tooltip__trigger" (click)="editUser(user, 'wm')">
+              Edit Wealth Manager
+            </button>
+          </ibm-overflow-menu-option>
+          <ibm-overflow-menu-option>
+            <button class="bx--tooltip__trigger" (click)="deleteUser(user, 'wm')">
+              Delete Wealth Manager
+            </button></ibm-overflow-menu-option>
+        </ibm-overflow-menu>
+        <ng-template #csBlock>
+          <ibm-overflow-menu>
+            <ibm-overflow-menu-option>
+              <button class="bx--tooltip__trigger" (click)="assignWealthManager(user, 'assign')">
+                Assign Wealth Manager
+              </button>
+            </ibm-overflow-menu-option>
+            <ibm-overflow-menu-option>
+              <button class="bx--tooltip__trigger" (click)="editUser(user, 'cs')">
+                Edit Customer
+              </button>
+            </ibm-overflow-menu-option>
+            <ibm-overflow-menu-option>
+              <button class="bx--tooltip__trigger" (click)="deleteUser(user, 'cs')">
+                Delete Customer
+              </button></ibm-overflow-menu-option>
+          </ibm-overflow-menu>
+        </ng-template>
+      </div>
+      <div class="layerOne">
+        <div class="userimage">
+          <img src="{{user.image}}" alt="">
+        </div>
+        <div class="details">
+          <div class="name">{{user.firstName}} {{user.lastName}}</div>
+        </div>
+      </div>
+      <div class="innerDetailsWrapper">
+        <div class="gender utClass">{{user.gender}} |</div>
+        <div class="age utClass">{{user.age}} years |</div>
+        <div class="place utClass">{{user.city}} |</div>
+        <div class="date utClass">Member since {{user.startDateString}}</div>
+        <div class="wm-assigned" *ngIf="typeData != 'wm'">Wealth Manager : <span>{{user.wealthManagerName}}</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Edit user component -->
+<div class="overLay" *ngIf="editUserEnabled">
+  <wealthcare-edit-user class="editComponent" *ngIf="editUserEnabled" [editUserData]="editThisUser"  [editUserType]="editThisUserType"
+    (closeEditContainer)="editBlockToggle($event)"></wealthcare-edit-user>
+</div>
+<!-- Delete user component -->
+<div class="overLay" *ngIf="deleteUserEnabled">
+  <wealthcare-delete-user class="deleteComponent" *ngIf="deleteUserEnabled" [deleteUserData]="deleteThisUser" [deleteUserType]="deleteThisUserType"
+    (closeEditContainer)="editBlockToggle($event)"></wealthcare-delete-user>
+</div>
+<!-- Assign wm component -->
+<wc-assignwealthmanagers class="assignWealthManagersComponent" [assignTothisWM]="wmChoosen" *ngIf="assignIsCalled" (actionToClose)="getMessage($event)"></wc-assignwealthmanagers>

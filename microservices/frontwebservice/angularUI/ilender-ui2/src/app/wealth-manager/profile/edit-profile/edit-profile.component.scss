@@ -1,0 +1,112 @@
+@import "components/module";
+
+.addUserForm {
+    // padding: 0px 20px
+}
+
+.formTitle {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0px 0px 20px 20px;
+}
+
+.layerOne {
+  display: flex;
+  flex-wrap: wrap;
+  .lhs {
+    width: 50%;
+    padding-right: 25px;
+  }
+  .rhs {
+    width: 50%;
+    padding-left: 25px;
+  }
+}
+.dropdown-container{
+    margin: 0 0 30px 0;
+}
+::ng-deep {
+  .bx--text-input, .bx--number--light input[type=number], .bx--text-area {
+    padding: 10px !important;
+    }
+    .bx--list-box{
+        margin-bottom: 30px !important;
+    } 
+    .bx--accordion__item{
+        padding: 5px;
+    }
+    .bx--accordion__item--active{
+        .bx--accordion__content{
+            padding-right: 10px !important;
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
+        }
+    }
+    
+    .bx--modal-container {
+        width: 80% !important;
+    }
+  .bx--text-area {
+    padding-left: 0;
+    background-color: #FFF;
+  }
+  .bx--form-item  {
+    margin: 0 0 30px 0;
+  }
+  .bx--label {
+    display: none;
+  }
+  .bx--select--light .bx--select-input {
+    padding-left: 0;
+    width: 100%;
+  }
+  .bx--text-input--light,
+  .bx--number--light input[type="number"] {
+    padding-left: 0;
+    width: 100%;
+  }
+  .bx--fieldset {
+    .bx--form-item {
+      margin: 0;
+    }
+  }
+  .bx--number {
+    width: 100%;
+  }
+  .submit-btn {
+      margin: 0px !important;
+    .bx--btn {
+      display: block;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  .bx--fieldset {
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 60px;
+    legend.bx--custom-label {
+      position: absolute;
+      left: 0;
+      top: 9px;
+      color: #848484;
+      font-size: 0.83rem;
+    }
+  }
+}
+
+.infoBlock {
+  background: #e46b6b;
+  color: #FFF;
+  padding: 20px 50px 20px 30px;
+}
+.custom-label{
+    color: #848484;
+}
+.padding-left{
+    padding-left: 0px !important;
+}
+

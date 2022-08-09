@@ -1,0 +1,223 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Pipeline
+metadata:
+  name: pipeline-ilender
+  namespace: ilender-tekton-ocp-ns
+spec:
+  resources:
+    - name: git-repo-ilender
+      type: git
+      default: https://github.ibm.com/SI-Lab-Apps/ilender.git
+    - name: image-frontweb
+      type: image
+      default: gandigit/ilender-frontweb-all-ocp:0.0.1
+      # default: image-registry.openshift-image-registry.svc:5000/ilender-tekton-ocp-ns/ilenderweb:latest
+    - name: image-user
+      type: image
+      default: gandigit/ilender-user-all-ocp:0.0.1
+    - name: image-loan
+      type: image
+      default: gandigit/ilender-loan-all-ocp:0.0.1
+    - name: image-loanprocessor
+      type: image
+      default: gandigit/ilender-loanprocessor-all-ocp:0.0.1
+    - name: image-creditscore
+      type: image
+      default: gandigit/ilender-creditscore-all-ocp:0.0.1
+    - name: image-customerprofile
+      type: image
+      default: gandigit/ilender-customerprofile-all-ocp:0.0.1
+    - name: image-openbanking
+      type: image
+      default: gandigit/ilender-openbanking-all-ocp:0.0.1
+    - name: image-bigbank
+      type: image
+      default: gandigit/ilender-bigbank-all-ocp:0.0.1
+    - name: image-greatbank
+      type: image
+      default: gandigit/ilender-greatbank-all-ocp:0.0.1
+  tasks:
+    - name: build-frontweb
+      taskRef:
+        name: buildah
+        kind: ClusterTask
+      resources:
+        inputs:
+        - name: source
+          resource: git-repo-ilender
+        outputs:
+        - name: image
+          resource: image-frontweb
+      params:
+        - name: DOCKERFILE
+          value: /workspace/source/microservices/frontwebservice/config/Dockerfile-cicd
+        - name: TLSVERIFY
+          value: "false"
+    - name: build-user
+      taskRef:
+        name: buildah
+        kind: ClusterTask
+      runAfter:
+        - build-frontweb
+      resources:
+        inputs:
+        - name: source
+          resource: git-repo-ilender
+        outputs:
+        - name: image
+          resource: image-user
+      params:
+        - name: DOCKERFILE
+          value: /workspace/source/microservices/userservice/config/Dockerfile-cicd
+        - name: TLSVERIFY
+          value: "false"
+    - name: build-loan
+      taskRef:
+        name: buildah
+        kind: ClusterTask
+      runAfter:
+        - build-frontweb
+      resources:
+        inputs:
+        - name: source
+          resource: git-repo-ilender
+        outputs:
+        - name: image
+          resource: image-loan
+      params:
+        - name: DOCKERFILE
+          value: /workspace/source/microservices/loanservice/config/Dockerfile-cicd
+        - name: TLSVERIFY
+          value: "false"
+    - name: build-loanprocessor
+      taskRef:
+        name: buildah
+        kind: ClusterTask
+      runAfter:
+        - build-frontweb
+      resources:
+        inputs:
+        - name: source
+          resource: git-repo-ilender
+        outputs:
+        - name: image
+          resource: image-loanprocessor
+      params:
+        - name: DOCKERFILE
+          value: /workspace/source/microservices/loanprocessorservice/config/Dockerfile-cicd
+        - name: TLSVERIFY
+          value: "false"
+    - name: build-creditscore
+      taskRef:
+        name: buildah
+        kind: ClusterTask
+      runAfter:
+        - build-frontweb
+      resources:
+        inputs:
+        - name: source
+          resource: git-repo-ilender
+        outputs:
+        - name: image
+          resource: image-creditscore
+      params:
+        - name: DOCKERFILE
+          value: /workspace/source/microservices/creditscoreservice/config/Dockerfile-cicd
+        - name: TLSVERIFY
+          value: "false"
+    - name: build-customerprofile
+      taskRef:
+        name: buildah
+        kind: ClusterTask
+      runAfter:
+        - build-frontweb
+      resources:
+        inputs:
+        - name: source
+          resource: git-repo-ilender
+        outputs:
+        - name: image
+          resource: image-customerprofile
+      params:
+        - name: DOCKERFILE
+          value: /workspace/source/microservices/customerprofileservice/config/Dockerfile-cicd
+        - name: TLSVERIFY
+          value: "false"
+    - name: build-openbanking
+      taskRef:
+        name: buildah
+        kind: ClusterTask
+      runAfter:
+        - build-frontweb
+      resources:
+        inputs:
+        - name: source
+          resource: git-repo-ilender
+        outputs:
+        - name: image
+          resource: image-openbanking
+      params:
+        - name: DOCKERFILE
+          value: /workspace/source/microservices/openbankingservice/config/Dockerfile-cicd
+        - name: TLSVERIFY
+          value: "false"
+    - name: build-bigbank
+      taskRef:
+        name: buildah
+        kind: ClusterTask
+      runAfter:
+        - build-user
+        - build-loan
+        - build-loanprocessor
+        - build-creditscore
+        - build-customerprofile
+        - build-openbanking
+      resources:
+        inputs:
+        - name: source
+          resource: git-repo-ilender
+        outputs:
+        - name: image
+          resource: image-bigbank
+      params:
+        - name: DOCKERFILE
+          value: /workspace/source/microservices/bigbankservice/config/Dockerfile-cicd
+        - name: TLSVERIFY
+          value: "false"
+    - name: build-greatbank
+      taskRef:
+        name: buildah
+        kind: ClusterTask
+      runAfter:
+        - build-user
+        - build-loan
+        - build-loanprocessor
+        - build-creditscore
+        - build-customerprofile
+        - build-openbanking
+      resources:
+        inputs:
+        - name: source
+          resource: git-repo-ilender
+        outputs:
+        - name: image
+          resource: image-greatbank
+      params:
+        - name: DOCKERFILE
+          value: /workspace/source/microservices/greatbankservice/config/Dockerfile-cicd
+        - name: TLSVERIFY
+          value: "false"
+    - name: deploy
+      taskRef:
+        name: task-deploy
+      runAfter:
+        - build-bigbank
+        - build-greatbank
+      params:
+        - name: pathToDeploymentFiles
+          value: /workspace/source-repo/deployment/01-ocp/yaml/
+      resources:
+        inputs:
+          - name: source-repo
+            resource: git-repo-ilender
+# Pipeline ilender-tekton-ocp-ns/pipeline-ilender can't be Run; it has an invalid spec: invalid value: : spec.params.pathToDeploymentFiles.type

@@ -1,0 +1,37 @@
+<wealthcare-header [userInfo]="userInfo"></wealthcare-header>
+<div class="generalWrapper">
+  <!-- <div class="bx--grid">
+    <div class="bx--row"> -->
+      <div class="position-relative">
+        <div class="overLay" *ngIf="addUserEnabled">
+          <!-- Add user component -->
+          <wealthcare-add-user class="addUserData" (clickOutside)="onClickedOutside()" *ngIf="addUserEnabled"
+            (closeAddContainer)="addBlockToggle($event)" [selectedRole]="role"></wealthcare-add-user>
+        </div>
+        <mat-tab-group [(selectedIndex)]="selectedIndex">
+          <mat-tab label="Wealth Managers">
+            <div class="user-list">
+              <div ibmRow>
+                <div class="addUserButton">
+                  <button class="bx--btn bx--btn--primary" type="button" (click)="addUser('wm')">Add Wealth
+                    Manager</button>
+                </div>
+              </div>
+              <wealthcare-user class="usersListComponent" [userDetails]="wmList" [typeData]="wm"></wealthcare-user>
+            </div>
+          </mat-tab>
+          <mat-tab label="Customers">
+            <div class="user-list">
+              <div ibmRow>
+                <div class="addUserButton">
+                  <button class="bx--btn bx--btn--primary" type="button" (click)="addUser('cs')">Add Customer</button>
+                </div> 
+              </div>
+              <wealthcare-user class="usersListComponent" [userDetails]="cuList" [typeData]="cs"></wealthcare-user>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+    <!-- </div>
+  </div> -->
+</div>

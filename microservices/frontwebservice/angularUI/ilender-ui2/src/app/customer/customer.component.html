@@ -1,0 +1,28 @@
+<wealthcare-header [userInfo]="userInfo"></wealthcare-header>
+<div class="generalWrapper">
+  <div class="bx--grid">
+    <div class="bx--row">
+      <div class="bx--col">
+        <ibm-tabs isNavigation="false">
+          <ibm-tab heading="Loans">
+            <div class="user-list">
+                <financial-plan [customersLoanList]="loanList" [financialEnabled]="true">
+                </financial-plan>
+            </div>
+          </ibm-tab>
+          <ibm-tab heading="History">
+            <div class="user-list">
+                <app-table [columnLoanHistory]="columnLoanHistory" [rowsLoanHistory]="rowsLoanHistory" [columnTransHistory]="columnTransHistory" [rowsTransHistory]="rowsTransHistory">
+                </app-table>
+            </div>
+          </ibm-tab>
+          <ibm-tab heading="Profile">
+            <div class="user-list">
+              <app-profile [customerDetails]="customerDetails"></app-profile>
+            </div>
+          </ibm-tab>
+        </ibm-tabs>
+      </div>
+    </div>
+  </div>
+</div>

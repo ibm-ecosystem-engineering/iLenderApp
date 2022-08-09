@@ -1,0 +1,36 @@
+<section class="header">
+  <div class="bx--grid">
+    <div class="bx--row">
+      <div class="bx--col">
+        <div class="outside">
+          <div class="inside">
+            <a href="/" class="logo">
+              <img src="../../assets/images/wealthcare.png" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="bx--col">
+        <div class="outside">
+          <div class="inside">
+            <div class="loggedInUser">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bx--col">
+         <div class="loggedinUserInfo" (click)="logoutToggle = !logoutToggle">
+            <div>
+              <span class="user-info">{{userInfo.userDisplayRole}} : {{userInfo.userDisplayName}}</span>
+            </div>
+            <div class="dropdown">
+                <img alt="" src="../../assets/images/user.svg">
+                <div class="dropdown-content">
+                  <div (click)="logout()">Log out</div>
+                </div>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>

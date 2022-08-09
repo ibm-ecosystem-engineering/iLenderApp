@@ -1,0 +1,56 @@
+@import 'components/goal_comp_common';
+
+.closeContainer {
+  position: absolute;
+  right: 70px;
+//   top: 10px;
+  padding: 10px;
+  background: none;
+  border: 1px solid $wc-gray;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  img {
+    width: 100%;
+    height: auto;
+    transform: rotate(0deg);
+    transition: all 0.2s;
+  }
+  &:hover {
+    img {
+      transform: rotate(90deg);
+      transition: all 0.2s;
+    }
+  }
+}
+.goal-details {
+    width:100% !important;
+}
+
+table {
+    margin-top: 2rem;
+    width: 100%;
+    border: 1px solid #aeadad;
+    thead{
+        background: #aeadad;
+        color: black;
+        font-size: 1rem;
+    }
+     td{
+        font-size: 0.8rem;
+    }
+    th{
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+   
+}
+td,th {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid grey;
+
+}
+.goal-percent{
+    color: #d1a95f;
+  }

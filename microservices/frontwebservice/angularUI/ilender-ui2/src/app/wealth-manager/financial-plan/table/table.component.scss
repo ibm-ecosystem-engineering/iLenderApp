@@ -1,0 +1,34 @@
+@import 'components/module';
+
+table {
+    margin-top: 2rem;
+    width: 100%;
+    border: 1px solid $wc-table-title   ;
+    thead{
+        background: $wc-table-title ;
+        color: black;
+        font-size: 1rem;
+    }
+     td{
+        font-size: 0.8rem;
+    }
+    th{
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+   
+}
+td,th {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid grey;
+
+}
+.goal-percent{
+    color: #d1a95f;
+  }
+  .goal-calc-container {
+    color: green;
+    font-weight: 500;
+    padding-top: 5px;
+  }

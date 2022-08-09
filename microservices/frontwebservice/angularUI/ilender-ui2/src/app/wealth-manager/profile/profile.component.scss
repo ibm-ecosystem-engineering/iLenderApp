@@ -1,0 +1,62 @@
+@import 'components/module';
+
+.profile-container{
+    margin: 2rem 0 0 0;
+    .header{
+        width: 100%;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        
+    }
+    .header-li{
+            width: 100%;
+            padding: 12px;
+            border-right: 1px solid black;
+    }
+}
+.background-grey{
+    background: lightgray;
+}
+
+table{
+    width:100%;
+    td{
+        div{
+            padding-top: 5px;
+        }
+        div:last-child {
+            color:black;
+            font-weight: 600;
+        }
+    }
+   
+    thead, tbody{
+        
+        display: flex;
+        border: 1px solid $wc-table-title;
+    }
+    thead{
+        background: $wc-table-title;
+    }
+    .thead-td{
+        
+        width: 100%;
+        padding: 5px;
+    }
+}
+.border{
+    border-right: 1px solid grey;
+}
+.child-container{
+    margin-top: 1rem;
+}
+
+.display-flex{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.edit-profile{
+    color: royalblue !important;
+}

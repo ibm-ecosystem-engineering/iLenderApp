@@ -1,0 +1,97 @@
+@import 'components/module';
+
+.users {
+  padding: 10px 5px 5px 10px;
+  .userWrapper {
+    background: $wc-white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: flex-start;
+    align-items: center;
+    .floaterMenu {
+      position: absolute;
+      right: 5px;
+      top: 10px;
+    }
+    .userimage {
+      width: 90px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .details {
+      width: calc(100% - 100px);
+      padding-left: 20px;
+      .name {
+        font-size: 1.2rem;
+        margin: 0 0 10px 0;
+        font-weight: 600;
+        color: $wc-title;
+      }
+      .innerDetailsWrapper {
+        display: flex;
+        flex-wrap: wrap;
+        .utClass {
+          font-size: 0.8rem;
+          margin: 0 6px 6px 0px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+::ng-deep {
+  .bx--tabs {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    .bx--tabs__nav-item--selected:not(.bx--tabs__nav-item--disabled)
+      .bx--tabs__nav-link {
+      font-size: 1.2rem;
+      width: auto !important;
+      line-height: 1 !important;
+    }
+  }
+  a.bx--tabs__nav-link {
+    font-size: 1.2rem;
+    width: auto !important;
+    padding: 0.5rem 2.5rem !important;
+    line-height: 1 !important;
+  }
+  .users {
+    padding: 0 20px 20px 0 !important;
+  }
+  .bx--btn--primary {
+    font-size: 1.3rem;
+    transform: translateX(1px);
+    padding: 10px 30px;
+  }
+  .bx--overflow-menu-options {
+    width: auto;
+  }
+  .bx--overflow-menu-options__btn {
+    max-width: 15rem;
+  }
+}
+
+.editDeleteComponent {
+  background-color: $wc-white;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.addUserData {
+  background: $wc-white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

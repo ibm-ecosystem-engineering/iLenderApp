@@ -1,0 +1,55 @@
+// Colors
+// $wc-header-blue: linear-gradient(rgba(80, 176, 234, 0.75), rgba(45, 110, 117, 0.95));
+
+// $--wc-header-blue: linear-gradient(rgba(80, 176, 234, 0.75), rgba(45, 110, 117, 0.95));
+// $--wc-white: #ffffff;
+// $--wc-blue: #0034ad;
+// $--wc-gray: #333333;
+// $--wc-title: #5776b3;
+
+:root {
+    --first-color: #488cff;
+    --wc-header-blue: #4682B4;
+    --wc-white: #ffffff;
+    --wc-blue: #87CEEB;
+    --wc-gray: #333333;
+    --wc-title: #5776b3;
+    --wc-table-title: #D9ECF4;
+    --wc-button-primary: #007fbf;
+    --wc-button-primary-hover: #53bbf0;
+  } // we can also define variables with JavaScript
+
+$wc-header-blue: var(--wc-header-blue);
+$wc-white: var(--wc-white);
+$wc-blue: var(--wc-blue);
+$wc-gray: var(--wc-gray);
+$wc-title: var(--wc-title);
+$wc-table-title: var(--wc-table-title);
+$wc-button-primary: var(--wc-button-primary);
+$wc-button-primary-hover: var(--wc-button-primary-hover);
+
+// Login colors
+$wc-light-gray: #f2f2f2;
+$wc-blue-sec: #008B8B;
+
+//=================
+
+// $wc-header-blue1: #182641;
+// $wc-white1: #ffffff;
+// $wc-blue1: #0034ad;
+// $wc-gray1: #333333;
+// $wc-title1: #5776b3;
+
+// $wc-header-blue2: #114168;
+
+// // $wc-header-blue: #4682B4;
+// // $wc-header-blue2: #114168;
+
+$wc-header-blue2: #13283a;
+$wc-white2: #eaf7ff;
+$wc-blue2: #6babc5;
+$wc-gray2: #d1d0d0;
+$wc-title2: #6fb3b8;
+$wc-table-title2: #6fb3b8;
+$wc-button-primary2: #0093af;
+$wc-button-primary-hover2: #5cd4ec;

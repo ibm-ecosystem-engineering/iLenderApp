@@ -1,0 +1,11 @@
+FROM maven:3.6.3-jdk-11-slim as builder
+COPY ./microservices/bigbankservice .
+RUN mvn clean package
+
+FROM anapsix/alpine-java:8
+WORKDIR /
+COPY --from=builder /target/bigbankservice-0.0.1-SNAPSHOT.jar /opt/app.jar
+COPY ./deployment/common/ocp/support-files /opt/
+RUN sh -c 'touch /opt/app.jar'
+EXPOSE 9090
+ENTRYPOINT ["java","-jar","/opt/app.jar"]

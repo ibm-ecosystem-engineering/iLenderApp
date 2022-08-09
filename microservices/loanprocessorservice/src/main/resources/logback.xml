@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Take both of these LOGDNA appenders -->
+    <!-- this one is a plain old HTTP transport -->
+    <appender name="LOGDNA-HTTP" class="com.ilender.micro.common.LogDNAAppender">
+        <appName>ilender-loanprocessorservice</appName>
+       <logDnaUrl>https://aaaa.com/logs/ingest</logDnaUrl>
+        <!-- <logDnaKey>ccc</logDnaKey> -->
+        <logDnaKey>bbbb</logDnaKey>
+        <includeStacktrace>true</includeStacktrace>
+        <sendMDC>true</sendMDC>
+    </appender>
+
+    <!-- ... and this one should be attached to the root -->
+    <appender name="LOGDNA" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="LOGDNA-HTTP" />
+    </appender>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%m%n</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+    </root>
+    <logger name="logdna-logger" level="DEBUG"  additivity="false">
+        <appender-ref ref="LOGDNA" />
+    </logger>
+</configuration>

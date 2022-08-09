@@ -1,0 +1,5 @@
+[
+    {"id":1,"title":"Buy a house in a Villa Gated Community","target_date":"Aug 2022","investment_required":"50 Lakhs","investment":"5 Lakhs","current_value":"7 Lakhs"},
+    {"id":2,"title":"Travel to Europe","target_date":"Aug 2022","investment_required":"10 Lakhs","investment":"2 Lakhs","current_value":"3 Lakhs"},
+    {"id":3,"title":"Fixed Deposit of 50 Lakhs","target_date":"Aug 2030","investment_required":"30 Lakhs","investment":"10 Lakhs","current_value":"10 Lakhs"}
+]

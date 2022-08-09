@@ -1,0 +1,92 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~carbon-components/scss/globals/scss/styles.scss';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~angular-notifier/styles.scss';
+
+@import 'components/module';
+
+button {
+  &:focus {
+    outline: 0 !important;
+  }
+  &:active {
+    box-shadow: none !important;
+  }
+}
+
+.wealthCareContainer {
+  display: block;
+}
+
+.generalWrapper {
+  padding: 40px 0;
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+* {
+  &:focus {
+    outline: 0 !important;
+  }
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+.breadCrumbs {
+  ul {
+    li {
+      a {
+        color: blue;
+        padding: 0 10px;
+        text-decoration: none;
+        cursor: pointer;
+        &:first-child {
+          padding-left: 0;
+        }
+      }
+      span {
+        &.current {
+          color: $wc-gray;
+          margin: 0 0 0 10px;
+        }
+      }
+    }
+  }
+}
+
+.breadCrumbs {
+  //display: none;
+  padding: 40px 0 30px 0;
+}
+
+.position-relative {
+  position: relative;
+}
+
+@media (min-width: 66rem) {
+  .bx--modal-container {
+      max-height: 90% !important;
+  }
+}
+@media (min-width: 42rem) {
+  .bx--modal-container {
+      width: 80% !important;
+  }
+}
+
+.bx--btn--primary {
+  color: white;
+  padding: 10px 20px !important;
+  font-size: 16px !important;
+  background-color: $wc-button-primary !important;
+  border-color: $wc-button-primary !important;
+}
+
+.bx--btn--primary:hover {
+  color: white;
+  padding: 10px 20px !important;
+  font-size: 16px !important;
+  background-color: $wc-button-primary-hover !important;
+  border-color: $wc-button-primary-hover !important;
+}

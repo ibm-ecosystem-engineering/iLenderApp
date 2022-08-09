@@ -1,0 +1,50 @@
+[{
+    "goal": "1",
+    "date":  "12th June 2014",
+    "invested_amount":  "10000",
+    "stocks": "4000", 
+    "stocks_calc": "22000", 
+    "mutual_funds" : "2000",
+    "mutual_funds_calc" : "5000",
+    "fixed_deposit": "4000",
+    "fixed_deposit_calc": "2000",
+    "value": "45000(x% up)",
+    "value_calc": "x% up"
+  },
+  {
+    "goal": "2",
+    "date":  "30th June 2015",
+    "invested_amount":  "15000",
+    "stocks": "4000", 
+    "stocks_calc": "22000", 
+    "mutual_funds" : "2000",
+    "mutual_funds_calc" : "5000",
+    "fixed_deposit": "4000",
+    "fixed_deposit_calc": "2000",
+    "value": "65000(x% up)",
+    "value_calc": "x% up"
+  },
+  {
+    "goal": "3",
+    "date":  "30th June 2015",
+    "invested_amount":  "15000",
+    "stocks": "1000", 
+    "stocks_calc": "12000", 
+    "mutual_funds" : "2000",
+    "mutual_funds_calc" : "8000",
+    "fixed_deposit": "4000",
+    "fixed_deposit_calc": "2000",
+    "value": "65000(x% up)",
+    "value_calc": "x% up"
+  },
+  {
+    "goal": "4",
+    "date":  "30th June 2015",
+    "invested_amount":  "15000",
+    "stocks": "8000", 
+    "mutual_funds" : "3000",
+    "fixed_deposit": "4000",
+    "value": "65000(x% up)",
+    "value_calc": "x% down"
+
+  }]

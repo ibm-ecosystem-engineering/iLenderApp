@@ -1,0 +1,82 @@
+@import 'components/module';
+
+
+
+.financial-plan-container{
+    padding: 2rem 0rem;
+}
+.text-input-wrapper{
+    display: flex;
+    input {
+        width: 80%;
+        margin-right: 15rem;
+        height: 45px;
+        padding: 1rem;
+    }
+    div:last-child{
+        width: 20%;
+        .bx--btn--primary{
+            font-size: 1rem !important;
+            min-height: 0px !important;
+        }
+    }
+}
+@media (min-width: 42rem) {
+    .bx--grid {
+        padding-left: 0rem !important;
+    }
+}
+.goal-details {
+  cursor: pointer;
+  width: 94%;
+  padding: 20px 5px 5px 0px !important;
+    .goalDetailsWrapper {
+      background: $wc-white;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      justify-content: flex-start;
+      align-items: center;
+      .floaterMenu {
+        position: absolute;
+        right: 5px;
+        top: 25px;
+       
+      }
+      .userimage {
+        width: 90px;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      .details {
+        width: 100%;
+        padding: 5px;
+        .name {
+          font-size: 1.2rem;
+          margin: 0 0 10px 0;
+          font-weight: 600;
+          color: $wc-title;
+          margin: 0 15px 10px 0;
+        }
+        .innerDetailsWrapper {
+          display: flex;
+          flex-direction: row;
+          .utClass {
+            font-size: 0.8rem;
+            margin: 0 25px 6px 0px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+  ::ng-deep {
+    .bx--overflow-menu-options__btn {
+      max-width: 15rem;
+      padding: 10px !important;
+    }
+  }

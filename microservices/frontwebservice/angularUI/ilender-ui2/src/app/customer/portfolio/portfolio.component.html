@@ -1,0 +1,60 @@
+
+<div class="">
+        <div class="bx--grid">
+          <div class="bx--row">
+            <div class="bx--col">
+                  <div class="financial-plan-container">
+                          <div ibmCol [columnNumbers]="{'md': 12, 'sm': 12}"
+                                  class="goal-details" >
+                                  <!-- table -->
+                                 <div>
+                                        <table>
+                                            <thead >
+                                                <tr>
+                                                  <th>Goal</th>
+                                                <th>Date</th>
+                                                <th>Invested Amount</th>
+                                                <th>Stocks</th>
+                                                <th>Mutual Funds</th>
+                                                <th>Fixed Deposits</th>
+                                                <th>Current Value</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                                <ng-container *ngFor="let goal of rowsForTable">
+                                                  <tr  *ngFor="let rows of goal.investments">
+                                                    <td>{{goal.goalReference}} : {{goal.goalDesc}}</td>
+                                                    <td>{{rows.investmentDate}}</td>
+                                                    <td>{{rows.investmentAmount}}</td>
+                                                    <td>
+                                                        <div>{{rows.stockAmount}}</div>
+                                                        <div *ngIf="rows.stocks_calc" class="goal-calc-container">({{rows.currentValueStockAmountString}})</div>
+                                                    </td>
+                                                    <td>
+                                                        <div>{{rows.mutualFundAmount}}</div>
+                                                        <div class="goal-calc-container" *ngIf="rows.mutual_funds_calc">({{rows.currentValueMutualFundAmountString}})</div>
+                                                    </td>
+                                                    <td>
+                                                        <div>{{rows.fixedDepositAmount}}</div>
+                                                        <div class="goal-calc-container" *ngIf="rows.fixed_deposit_calc">({{rows.currentValueFixedDepositAmountString}})</div>
+                                                    </td>
+                                                    <td>
+                                                        <div>{{rows.currentValueTotalString}}</div>
+                                                        <div *ngIf="rows.value_calc" class="goal-calc-container">({{rows.currentValueTotalComments}})</div>
+                                                    </td>
+
+                                                  </tr>
+                                                </ng-container>
+                                            </tbody>
+                                        </table>
+                                 </div>
+
+
+
+                              </div>
+                  </div>
+                  <add-goal *ngIf="addGoalPageEnabled" [selectedGoal]="selectedGoalDetails" (closeAddContainer)="closeGoalOverView($event)" ></add-goal>
+            </div>
+          </div>
+        </div>
+      </div>

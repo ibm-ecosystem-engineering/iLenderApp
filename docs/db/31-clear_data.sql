@@ -1,0 +1,23 @@
+delete from LndUser;
+delete from LndFieldAgent;
+delete from LndBusinessManager;
+delete from LndCustomer;
+delete from LndLoan;
+delete from LndLoanOffer;
+delete from LndLoanDetail;
+delete from LndLoanHistory;
+delete from LndBankTransHistory;
+delete from LndLoanHistoryGreat;
+delete from LndBankTransHistoryGreat;
+
+ALTER TABLE LndUser AUTO_INCREMENT = 10001;
+ALTER TABLE LndBusinessManager AUTO_INCREMENT = 20001;
+ALTER TABLE LndFieldAgent AUTO_INCREMENT = 30001;
+ALTER TABLE LndCustomer AUTO_INCREMENT = 40001;
+ALTER TABLE LndLoan AUTO_INCREMENT = 50001;
+ALTER TABLE LndLoanOffer AUTO_INCREMENT = 60001;
+ALTER TABLE LndLoanDetail AUTO_INCREMENT = 70001;
+ALTER TABLE LndLoanHistory AUTO_INCREMENT = 80001;
+ALTER TABLE LndBankTransHistory AUTO_INCREMENT = 90001;
+ALTER TABLE LndLoanHistoryGreat AUTO_INCREMENT = 91001;
+ALTER TABLE LndBankTransHistoryGreat AUTO_INCREMENT = 92001;

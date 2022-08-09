@@ -1,0 +1,16 @@
+<!-- Users -->
+<div width="100%">
+  <div ibmCol width="100%" *ngFor="let goal of goalsList" class="users">
+    <div class="userWrapper">
+      <div class="details">
+        <div class="name">Goal # {{goal.id}}: {{goal.title}}</div>
+        <div class="innerDetailsWrapper">
+          <div class="gender utClass">Target Date: {{goal.target_date}},</div>
+          <div class="age utClass">Investment Required: {{goal.investment_required}}</div>
+          <div class="place utClass">Goal Investment: {{goal.investment}},</div>
+          <div class="date utClass">Investment Current Value: {{goal.current_value}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

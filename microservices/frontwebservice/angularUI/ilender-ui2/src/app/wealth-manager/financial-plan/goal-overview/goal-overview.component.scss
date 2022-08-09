@@ -1,0 +1,74 @@
+@import 'components/goal_comp_common';
+
+.closeContainer {
+  position: absolute;
+  right: 70px;
+//   top: 10px;
+  padding: 10px;
+  background: none;
+  border: 1px solid $wc-gray;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  img {
+    width: 100%;
+    height: auto;
+    transform: rotate(0deg);
+    transition: all 0.2s;
+  }
+  &:hover {
+    img {
+      transform: rotate(90deg);
+      transition: all 0.2s;
+    }
+  }
+}
+.goal-details {
+    width:100% !important;
+}
+.goal-percent{
+  color: #d1a95f;
+}
+
+.chartsSection {
+  display: flex;
+  flex-wrap: wrap;
+  .lhs {
+    width: 50%;
+  }
+  .rhs {
+    width: 50%;
+    // display: flex;
+    // align-items: flex-end;
+  }
+}
+.height-25{
+  height: 25px;
+}
+.overLay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.deleteComponent {
+  background: $wc-white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  overflow: auto;
+  width: 400px;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.utClass {
+  span:last-child{
+    font-size: 1.1rem;
+    color: black;
+    font-weight: 600;
+    padding: 10px 0;
+  }
+}

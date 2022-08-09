@@ -1,0 +1,53 @@
+@import 'components/module';
+
+.user-list {
+  padding: 16px;
+  position: relative;
+  .addUserButton {
+    margin: 20px 0 30px;
+    width: 100%;
+  }
+}
+
+.usersListComponent {
+  display: block;
+}
+
+::ng-deep {
+  .bx--tabs {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    .bx--tabs__nav-item--selected:not(.bx--tabs__nav-item--disabled) .bx--tabs__nav-link {
+      font-size: 1.2rem;
+      width: auto !important;
+      line-height: 1 !important;
+    }
+  }
+  a.bx--tabs__nav-link {
+    font-size: 1.2rem;
+    width: auto !important;
+    padding: 0.5rem 2.5rem !important;
+    line-height: 1 !important;
+  }
+  .users {
+    padding: 0 20px 20px 0 !important;
+  }
+  .bx--btn--primary {
+    font-size: 1.3rem;
+    padding: 10px 30px;
+  }
+  .bx--overflow-menu-options {
+    width: auto;
+  }
+  .bx--overflow-menu-options__btn {
+    max-width: 15rem;
+    padding: 0;
+  }
+  .bx--overflow-menu-options__option-content {
+    width: 100%;
+    .bx--tooltip__trigger:not(.bx--btn--icon-only) {
+      padding: 0 1rem;
+      width: 100%;
+      text-align: left;
+    }
+  }
+}

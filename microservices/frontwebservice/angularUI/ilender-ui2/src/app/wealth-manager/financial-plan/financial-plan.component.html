@@ -1,0 +1,119 @@
+<!-- <button class="closeContainer" (click)="closeAddBlock(false)">
+        <img src="../../../../assets/images/close.svg" alt="">
+</button> -->
+<div class="">
+    <div class="bx--grid">
+      <div class="bx--row">
+        <div class="bx--col">
+              <div class="financial-plan-container" *ngIf="financialEnabled">
+                      <div class="text-input-wrapper">
+                            <input  type="text" placeholder="Search Loans">
+                            <button  *ngIf="!isBusinessManager" class="bx--btn bx--btn--primary" type="button" (click)="requestForLoan()" placeholder="Request for Loan">Request for Loan</button>
+                      </div>
+                      <div ibmCol [columnNumbers]="{'md': 9, 'sm': 12}" *ngFor="let loan of customerGoals;let goalIndex = index"  class="goal-details" >
+                              <div class="goalDetailsWrapper" >
+                                  <div class="details">
+                                    <table>
+                                        <tr>
+                                            <td>Loan requested date:</td>
+                                            <td>{{loan.loanRequestDateString}}</td>
+                                            <td>Loan granted date:</td>
+                                            <td>{{loan.loanRequestDateString}}</td>
+                                            <td>Loan Amount</td>
+                                            <td>{{loan.loanAmount}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Purpose</td>
+                                            <td colspan=5>{{loan.purpose}}</td>
+                                        </tr>
+                                    <ng-container *ngIf="isBusinessManager"> 
+                                          <tr >
+                                              <td colspan=6>Status:</td>
+                                          </tr>
+                                          <tr *ngIf="loan.statusCode == '01_LOAN_REQUESTED' ">
+                                              <td colspan=6>
+                                                  {{loan.statusTextBm}}&nbsp;&nbsp;
+                                                  <button class="bx--btn bx--btn--primary  my-button" type="button" (click)="clickGetCreditScore(loan.lndCustomerId, loan.id)">Go</button>
+                                              </td>
+                                          </tr>
+                                          <tr *ngIf="loan.statusCode == '02_CREDIT_SCORE_RECEIVED' ">
+                                                <td colspan=6>
+                                                    {{loan.statusTextBm}}&nbsp;&nbsp;
+                                                    <button class="bx--btn bx--btn--primary  my-button" type="button" (click)="clickApprove(loan.lndCustomerId, loan.id)">Approve</button> &nbsp;&nbsp;&nbsp;
+                                                    <button class="bx--btn bx--btn--primary  my-button" type="button" (click)="clickReject(loan.lndCustomerId, loan.id)">Reject</button>
+                                                </td>
+                                          </tr>
+                                          <tr *ngIf="( loan.statusCode ===  '03_LOAN_REQUEST_REJECTED' || loan.statusCode ===  '04_LOAN_REQUEST_SENT_TO_BANKS' || loan.statusCode ===  '05_LOAN_OFFERES_SENT_TO_SMB' || loan.statusCode ===  '06_LOAN_ACCEPTED_BY_SMB' ) ">
+                                                <td colspan=6>{{loan.statusTextBm}}</td>
+                                          </tr>
+                                    </ng-container>
+                                      <ng-container *ngIf="!isBusinessManager"> 
+                                          <ng-container *ngIf="( loan.statusCode === '01_LOAN_REQUESTED' ||  loan.statusCode === '02_CREDIT_SCORE_RECEIVED' || loan.statusCode ===  '03_LOAN_REQUEST_REJECTED' || loan.statusCode ===  '04_LOAN_REQUEST_SENT_TO_BANKS' ) ">
+                                            <tr>
+                                                <td colspan=6>Status:</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan=6>
+                                                    {{loan.statusTextCustomer}}
+                                                </td>
+                                            </tr>
+                                          </ng-container>
+                                          <ng-container *ngIf="loan.statusCode === '05_LOAN_OFFERES_SENT_TO_SMB' ">
+                                            <tr>
+                                                <td colspan=6>Status:</td>
+                                            </tr>
+                                            <tr  *ngFor="let loanProcessInfo of loan.loanProcessInfoList;" >
+                                                <td colspan=6>
+                                                    {{loanProcessInfo.text}}&nbsp;&nbsp;
+                                                    <button class="bx--btn bx--btn--primary  my-button" type="button" (click)="clickAccept(loan.lndCustomerId, loanProcessInfo.id)">Accept</button>
+                                                </td>
+                                            </tr>
+                                          </ng-container>
+                                          <ng-template [ngIf]="loan.statusCode == '06_LOAN_ACCEPTED_BY_SMB' ">
+                                            <ng-container *ngFor="let loanDetail of loan.loanDetailList;" >
+                                                <tr>
+                                                    <td>EMI:</td>
+                                                    <td>{{loanDetail.emi}}</td>
+                                                    <td>Start Date:</td>
+                                                    <td>{{loanDetail.loanStartDateString}}</td>
+                                                    <td>End Date</td>
+                                                    <td>{{loanDetail.loanEndDateString}}</td>
+                                                </tr>                                        
+                                                <tr>
+                                                    <td>Number of Installments:</td>
+                                                    <td>{{loanDetail.noOfInstallmentsRemaining}}</td>
+                                                    <td>Principal (remaining):</td>
+                                                    <td>{{loanDetail.principalRemaining}}</td>
+                                                    <td>Interest (remaining):</td>
+                                                    <td>{{loanDetail.interestRemaining}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Last Installment Amount:</td>
+                                                    <td>{{loanDetail.lastInstallmentAmount}}</td>
+                                                    <td>Last Installment Date:</td>
+                                                    <td>{{loanDetail.lastInstallmentDateString}}</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </ng-container>            
+                                          </ng-template>   
+                                      </ng-container>
+                                    </table>
+                                  </div>
+                                </div>
+                      </div>
+              </div>
+                <add-goal *ngIf="!financialEnabled && addGoalPageEnabled" [selectedGoal]="selectedGoal" (closeAddContainer)="closeGoalOverView($event)" ></add-goal>
+                <ng-container *ngIf="!financialEnabled && openGoalDetailsPageEnabled">
+                    <goal-overview  (closeContainer) ="closeGoalOverView($event)" [selectedGoal]="selectedGoal" [columnsForTable] ="columnsForTable" [rowsForTable]="rowsForTable" [selectedIndex]="selectedIndex"></goal-overview>
+                </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete user component -->
+<div class="overLay" *ngIf="deleteUserEnabled">
+    <app-delete-goal class="deleteComponent" *ngIf="deleteUserEnabled" [deleteGoal]="deleteSelectedGoal"
+       (closeContainer)="closeGoalOverView($event)"></app-delete-goal>
+  </div>

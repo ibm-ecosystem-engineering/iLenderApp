@@ -1,0 +1,52 @@
+<div class="loginWrapper">
+  <div class="lhs">
+    <div class="welcome-content">
+      <h3>Welcome to </h3>
+      <h1>iLender</h1>
+      <h3>A SMB Loan Application </h3>
+    </div>
+  </div>
+  <div class="rhs">
+    <div class="loginBlock">
+      <div class="loginContainer">
+        <div class="nav">
+          <ul class="links">
+            <li class="signin-active">
+              <div class="logoBlock">
+                <img src="../../assets/images/wealthcare-blue.png" alt="" width="180">
+              </div>
+              <span class="btn">Sign in</span>
+            </li>
+          </ul>
+        </div>
+        <div class="formBlock">
+          <form class="form-signin" [formGroup]="proForm" (ngSubmit)="onSubmit()">
+            <div class="inputBlock">
+              <label for="username">Username</label>
+              <input class="form-styling" type="text" name="username" placeholder="" formControlName="username"/>
+            </div>
+            <div class="inputBlock">
+              <label for="password">Password</label>
+              <input class="form-styling" type="password" name="password" placeholder="" formControlName="password"/>
+            </div>
+            <div class="inputBlock">
+              <input type="checkbox" id="checkbox" />
+              <label for="checkbox"><span class="ui"></span>Keep me signed in</label>
+            </div>
+            <div class="btn-animate">
+              <button class="btn-signin" type="submit">Sign in</button>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="btn-animate">
+              <p>{{hostName}}</p>
+            </div>            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

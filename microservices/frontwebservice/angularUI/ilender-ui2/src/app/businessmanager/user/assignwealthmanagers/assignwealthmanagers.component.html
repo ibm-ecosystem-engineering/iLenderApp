@@ -1,0 +1,72 @@
+<wealthcare-header></wealthcare-header>
+<!-- Users -->
+<div class="subTitleInnerComponents">
+  Wealth Managers
+</div>
+<div class="flex-wrapper">
+  <div class="lhs-wrap">
+    <div ibmRow>
+      <div ibmCol [columnNumbers]="{'lg': 4, 'sm': 12}" *ngFor="let user of userDetails" class="users">
+        <mat-radio-button name="assignWealthManagerRadioGroup" value="{{user.firstName}} {{user.lastName}}" *ngIf="chooseWealthManager"
+          (change)="onChange($event, user.id)">
+          <div class="userWrapper">
+            <div class="layerOne">
+              <div class="userimage">
+                <img src="{{user.image}}" alt="">
+              </div>
+              <div class="details">
+                <div class="name">{{user.firstName}} {{user.lastName}}</div>
+              </div>
+            </div>
+            <div class="innerDetailsWrapper">
+              <div class="gender utClass">{{user.gender}} |</div>
+              <div class="age utClass">{{user.age}} years |</div>
+              <div class="place utClass">{{user.city}} |</div>
+              <div class="date utClass">Member since {{user.startDateString}}</div>
+              <div class="wm-assigned" *ngIf="user.wealthManagerName">Wealth Manager : <span>{{user.wealthManagerName}}</span>
+              </div>
+            </div>
+          </div>
+        </mat-radio-button>
+      </div>
+    </div>
+  </div>
+  <div class="actionDisplayWrap">
+    <!-- <div #spacer></div> -->
+    <!-- <div stickyThing [spacer]="spacer"> -->
+      <div class="actionDisplay">
+        <div class="assignee">Assigning wealth manager for </div>
+        <div class="users">
+          <div class="userWrapper">
+            <div class="layerOne">
+              <div class="userimage">
+                <img src="{{assignTothisWM.image}}" alt="">
+              </div>
+              <div class="details">
+                <div class="name">{{assignTothisWM.firstName}} {{assignTothisWM.lastName}}</div>
+              </div>
+            </div>
+            <div class="innerDetailsWrapper">
+              <div class="gender utClass">{{assignTothisWM.gender}} |</div>
+              <div class="age utClass">{{assignTothisWM.age}} years |</div>
+              <div class="place utClass">{{assignTothisWM.city}} |</div>
+              <div class="date utClass">Member since {{assignTothisWM.startDateString}}</div>
+              <div class="wm-assigned" *ngIf="assignTothisWM.wealthManagerName">Wealth Manager : <span>{{assignTothisWM.wealthManagerName}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="selectedWMBlock" *ngIf="selected">
+          <div *ngIf="selected" class="choosen">
+            <div class="assignee">Selected Wealth Manager is</div>
+            <span>{{ChoosenWMRadioValue}}</span>
+          </div>
+        </div>
+        <div class="btn-block">
+          <button class="bx--btn bx--btn--secondary" type="button" (click)="cancel()">Cancel</button>
+          <button class="bx--btn bx--btn--primary" type="button" (click)="save()" *ngIf="selected">Save</button>
+        </div>
+      </div>
+    <!-- </div> -->
+  </div>
+</div>

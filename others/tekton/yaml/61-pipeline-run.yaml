@@ -1,0 +1,40 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineRun
+metadata:
+  name: pipelinerun-ilender-01
+  namespace: ilender-tekton-ocp-ns
+spec:
+  serviceAccountName: service-account-ilender
+  pipelineRef:
+    name: pipeline-ilender
+  resources:
+    - name: git-repo-ilender
+      resourceRef:
+        name: git-repo-ilender
+    - name: image-frontweb
+      resourceRef:
+        name: image-frontweb
+    - name: image-user
+      resourceRef:
+        name: image-user
+    - name: image-loan
+      resourceRef:
+        name: image-loan
+    - name: image-loanprocessor
+      resourceRef:
+        name: image-loanprocessor
+    - name: image-creditscore
+      resourceRef:
+        name: image-creditscore
+    - name: image-customerprofile
+      resourceRef:
+        name: image-customerprofile
+    - name: image-openbanking
+      resourceRef:
+        name: image-openbanking
+    - name: image-bigbank
+      resourceRef:
+        name: image-bigbank
+    - name: image-greatbank
+      resourceRef:
+        name: image-greatbank

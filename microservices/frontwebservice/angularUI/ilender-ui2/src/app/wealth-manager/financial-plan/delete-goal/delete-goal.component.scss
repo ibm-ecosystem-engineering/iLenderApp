@@ -1,0 +1,57 @@
+@import "components/module";
+
+.closeContainer {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 0;
+  background: none;
+  border: none;
+  height: 22px;
+  width: 22px;
+  cursor: pointer;
+  img {
+    width: 100%;
+    height: auto;
+    transform: rotate(0deg);
+    transition: all 0.2s;
+  }
+  &:hover {
+    img {
+      transform: rotate(90deg);
+      transition: all 0.2s;
+    }
+  }
+}
+
+.deleteBlock {
+  padding: 50px 40px 40px 40px;
+}
+
+.infoBlock {
+  background: #e46b6b;
+  color: #FFF;
+  padding: 20px 50px 20px 30px;
+}
+
+.deleteConfirmation {
+  text-align: center;
+  p {
+    font-size: 1.3rem !important;
+    line-height: 1rem;
+    margin: 0 0 15px 0;
+  }
+}
+
+.userDataConfirm {
+  display: block;
+  margin: 30px 0 40px 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+::ng-deep {
+  .bx--btn--danger {
+    margin-right: 10px;
+  }
+}

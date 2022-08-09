@@ -1,0 +1,108 @@
+@import "components/module";
+
+.closeContainer {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  padding: 0;
+  background: none;
+  border: none;
+  height: 22px;
+  width: 22px;
+  cursor: pointer;
+  img {
+    width: 100%;
+    height: auto;
+    transform: rotate(0deg);
+    transition: all 0.2s;
+  }
+  &:hover {
+    img {
+      transform: rotate(90deg);
+      transition: all 0.2s;
+    }
+  }
+}
+
+.addUserForm {
+  padding: 30px 40px 10px 40px;
+}
+
+.formTitle {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+}
+
+.layerOne {
+  display: flex;
+  flex-wrap: wrap;
+  .lhs {
+    width: 50%;
+    padding-right: 25px;
+  }
+  .rhs {
+    width: 50%;
+    padding-left: 25px;
+  }
+}
+
+::ng-deep {
+  .bx--text-area {
+    padding-left: 0;
+    background-color: #FFF;
+  }
+  .bx--form-item {
+    margin: 0 0 30px 0;
+  }
+  .bx--label {
+    display: none;
+  }
+  .bx--select--light .bx--select-input {
+    padding-left: 0;
+    width: 100%;
+  }
+  .bx--text-input--light,
+  .bx--number--light input[type="number"] {
+    padding-left: 0;
+    width: 100%;
+  }
+  .bx--fieldset {
+    .bx--form-item {
+      margin: 0;
+    }
+  }
+  .bx--number {
+    width: 100%;
+  }
+  .submit-btn {
+    margin-top: 100px;
+    margin-bottom: 0;
+    .bx--btn {
+      display: block;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  .bx--fieldset {
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 60px;
+    legend.bx--custom-label {
+      position: absolute;
+      left: 0;
+      top: 9px;
+      color: #848484;
+      font-size: 0.83rem;
+    }
+  }
+}
+
+.infoBlock {
+  background: #e46b6b;
+  color: #FFF;
+  padding: 20px 50px 20px 30px;
+}

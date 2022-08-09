@@ -1,0 +1,37 @@
+.addUserForm {
+    max-width: 500px;
+    margin: 40px 0;
+  }
+  
+  .formTitle {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0 0 30px 0;
+  }
+  
+  ::ng-deep {
+    .bx--form-item {
+      margin: 0 0 30px 0;
+    }
+  }
+  .button-container{
+      display: block;
+    button{
+        margin-right:20px;
+    }
+  }
+  .bx--text-input {
+    padding-left: 0px !important;
+  }
+ 
+  .display-flex-container{
+    display: flex;  
+    flex-direction: column;
+    margin-top: 10px;
+    label:last-child {
+        color:black;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+  }
+ 

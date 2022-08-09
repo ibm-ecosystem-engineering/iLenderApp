@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ilender-openbanking
+  namespace: ilender-ns
+  labels:
+    app: ilender-application
+    subname: openbanking
+spec:
+  selector:
+    matchLabels:
+      app: ilender-application
+      subname: openbanking
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ilender-application
+        subname: openbanking
+    spec:
+      containers:
+        - name: ilender-openbanking
+          image: "gandigit/ilender-openbanking-oss:0.0.1"
+          imagePullPolicy: Always
+          ports:
+            - name: my-http
+              containerPort: 9075
+              protocol: TCP
+            - name: https
+              containerPort: 8082
+          env:
+            - name: MY_NAMESPACE_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: MY_CONTAINER_NAME
+              value: ilender-openbanking
+            - name: MY_CONTAINER_IMAGE
+              value: "gandigit/ilender-openbanking-oss:0.0.1"
+            - name: MY_LABELS_APP
+              value: ilender-openbanking
+            - name: MY_HOST
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.hostIP
+            - name: MY_POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: MY_POD_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.uid
+            - name: skipExternalLog
+              value: "FALSE"                    
+          envFrom:
+            - configMapRef:
+                name: ilender-configmap-urls
+            - configMapRef:
+                name: ilender-configmap-db
+            - configMapRef:
+                name: ilender-configmap-mq
+            - configMapRef:
+                name: ilender-configmap-eventstream
+            - configMapRef:
+                name: ilender-configmap-common
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ilender-openbanking
+  namespace: ilender-ns
+  labels:
+    app: ilender-application
+    subname: openbanking
+spec:
+  type: ClusterIP
+  ports:
+    - name: my-http
+      port: 9090
+      targetPort: my-http
+  selector:
+    app: ilender-application
+    subname: openbanking

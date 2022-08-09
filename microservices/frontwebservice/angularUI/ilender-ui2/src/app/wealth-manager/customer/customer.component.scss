@@ -1,0 +1,103 @@
+@import "components/module";
+
+.user-list {
+  padding: 16px;
+  position: relative;
+  .addUserButton {
+    margin: 20px 0 30px;
+    width: 100%;
+  }
+}
+
+.usersListComponent {
+  display: block;
+}
+
+.layerOne {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+::ng-deep {
+  .bx--btn--primary {
+    font-size: 1.3rem;
+    padding: 10px 30px;
+  }
+  .bx--overflow-menu-options {
+    width: auto;
+  }
+  .bx--overflow-menu-options__btn {
+    max-width: 15rem;
+    padding: 0;
+  }
+}
+
+.users {
+  cursor: pointer;
+  padding: 25px 50px 20px 0 !important;
+  .userWrapper {
+    background: $wc-white;
+    box-shadow: 0 25px 50px -12px rgba(146, 118, 118, 0.25);
+    //padding: 20px;
+    border-radius: 40px 6px 6px 6px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: flex-start;
+    align-items: center;
+    .floaterMenu {
+      position: absolute;
+      right: 5px;
+      top: 10px;
+    }
+    .userimage {
+      width: 80px;
+      height: 80px;
+      transform: translateY(-10px);
+      overflow: hidden;
+      border: 4px solid #87CEEB;
+      background: #546080;
+      border-radius: 50px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .details {
+      width: calc(100% - 100px);
+      padding-left: 20px;
+      .name {
+        font-size: 1.2rem;
+        margin: 0 0 10px 0;
+        font-weight: 600;
+        color: $wc-title;
+      }
+    }
+    .innerDetailsWrapper {
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      .utClass {
+        font-size: 1rem;
+        margin: 5px;
+        font-weight: 400;
+      }
+    }
+    &:hover {
+      background-color: #99c3ee;
+      .details {
+        .name {
+          color: $wc-white;
+        }
+      }
+      .innerDetailsWrapper {
+        color: $wc-white;
+        .utClass {
+          color: $wc-white;
+        }
+      }
+    }
+  }
+}

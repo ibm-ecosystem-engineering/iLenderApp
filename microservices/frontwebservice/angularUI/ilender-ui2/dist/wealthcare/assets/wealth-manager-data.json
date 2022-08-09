@@ -1,0 +1,282 @@
+
+
+[
+    {
+      "id": 1,
+      "name": "Michel Jackson",
+      "email": "dwixey1@istockphoto.com",
+      "wealthmanager": "Sangeetha Sreenath",
+      "gender": "Male",
+      "age": "16",
+      "date": "12/25/2006",
+      "place": "Ridgeview",
+      "goals": [
+        {
+            "name": "Buy a House in a Villa Gated Community",
+            "goal_percent": "60% goal reached in 3/5 years",
+            "target_date": "Aug 2022",
+            "investment_required": "50 lakhs INR",
+            "goal_investment": "5 Lakhs INR",
+            "investment_current_value": "7 Lakhs INR"
+        },
+        {
+            "name": "Travel to Europe",
+            "goal_percent": "80% goal reached in 4/5 years",
+            "target_date": "Aug 2021",
+            "investment_required": "50 lakhs INR",
+            "goal_investment": "6 Lakhs INR",
+            "investment_current_value": "8 Lakhs INR"
+        },
+        {
+            "name": "Save for Child's Higher Education",
+            "goal_percent": "60% goal reached in 3/5 years",
+            "target_date": "Aug 2022",
+            "investment_required": "50 lakhs INR",
+            "goal_investment": "5 Lakhs INR",
+            "investment_current_value": "7 Lakhs INR"
+        }
+    ]
+    },
+    {
+      "id": 2,
+      "name": "Fayette Jiruch",
+      "email": "fjiruch2@latimes.com",
+      "wealthmanager": "Sangeetha Sreenath",
+      "gender": "Female",
+      "age": "74",
+      "date": "11/12/2006",
+      "place": "Springs",
+      "goals": [
+        {
+            "name": "Buy a House in a Villa Gated Community",
+            "goal_percent": "60% goal reached in 3/5 years",
+            "target_date": "Aug 2022",
+            "investment_required": "50 lakhs INR",
+            "goal_investment": "5 Lakhs INR",
+            "investment_current_value": "7 Lakhs INR"
+        },
+        {
+            "name": "Travel to Europe",
+            "goal_percent": "80% goal reached in 4/5 years",
+            "target_date": "Aug 2021",
+            "investment_required": "50 lakhs INR",
+            "goal_investment": "6 Lakhs INR",
+            "investment_current_value": "8 Lakhs INR"
+        },
+        {
+            "name": "Save for Child's Higher Education",
+            "goal_percent": "60% goal reached in 3/5 years",
+            "target_date": "Aug 2022",
+            "investment_required": "50 lakhs INR",
+            "goal_investment": "5 Lakhs INR",
+            "investment_current_value": "7 Lakhs INR"
+        }
+    ]
+    },
+    {
+      "id": 3,
+      "name": "Lissi Olkowicz",
+      "email": "lolkowicz3@aol.com",
+      "wealthmanager": "Sangeetha Sreenath",
+      "gender": "Female",
+      "age": "18",
+      "date": "1/27/2005",
+      "place": "Prairie Rose",
+      "goals": [
+        {
+            "name": "Buy a House in a Villa Gated Community",
+            "goal_percent": "60% goal reached in 3/5 years",
+            "target_date": "Aug 2022",
+            "investment_required": "50 lakhs INR",
+            "goal_investment": "5 Lakhs INR",
+            "investment_current_value": "7 Lakhs INR"
+        },
+        {
+            "name": "Travel to Europe",
+            "goal_percent": "80% goal reached in 4/5 years",
+            "target_date": "Aug 2021",
+            "investment_required": "50 lakhs INR",
+            "goal_investment": "6 Lakhs INR",
+            "investment_current_value": "8 Lakhs INR"
+        },
+        {
+            "name": "Save for Child's Higher Education",
+            "goal_percent": "60% goal reached in 3/5 years",
+            "target_date": "Aug 2022",
+            "investment_required": "50 lakhs INR",
+            "goal_investment": "5 Lakhs INR",
+            "investment_current_value": "7 Lakhs INR"
+        }
+    ]
+    },
+    {
+      "id": 4,
+      "name": "Alonso Owbridge",
+      "email": "aowbridge0@delicious.com",
+      "wealthmanager": "Not Assigned",
+      "gender": "Male",
+      "age": "24",
+      "date": "12/11/2012",
+      "place": "Bartillon",
+      "goals": [
+        {
+            "name": "Buy a House in a Villa Gated Community",
+            "goal_percent": "60% goal reached in 3/5 years",
+            "target_date": "Aug 2022",
+            "investment_required": "50 lakhs INR",
+            "goal_investment": "5 Lakhs INR",
+            "investment_current_value": "7 Lakhs INR"
+        },
+        {
+            "name": "Travel to Europe",
+            "goal_percent": "80% goal reached in 4/5 years",
+            "target_date": "Aug 2021",
+            "investment_required": "50 lakhs INR",
+            "goal_investment": "6 Lakhs INR",
+            "investment_current_value": "8 Lakhs INR"
+        },
+        {
+            "name": "Save for Child's Higher Education",
+            "goal_percent": "60% goal reached in 3/5 years",
+            "target_date": "Aug 2022",
+            "investment_required": "50 lakhs INR",
+            "goal_investment": "5 Lakhs INR",
+            "investment_current_value": "7 Lakhs INR"
+        }
+    ]
+    },
+    {
+      "id": 5,
+      "name": "Leslie Barstow",
+      "email": "lbarstow4@lulu.com",
+      "wealthmanager": "Sangeetha Sreenath",
+      "gender": "Female",
+      "age": "26",
+      "date": "9/8/2004",
+      "place": "Acker",
+      "goals": [
+        {
+            "name": "Buy a House in a Villa Gated Community",
+            "goal_percent": "60% goal reached in 3/5 years",
+            "target_date": "Aug 2022",
+            "investment_required": "50 lakhs INR",
+            "goal_investment": "5 Lakhs INR",
+            "investment_current_value": "7 Lakhs INR"
+        },
+        {
+            "name": "Travel to Europe",
+            "goal_percent": "80% goal reached in 4/5 years",
+            "target_date": "Aug 2021",
+            "investment_required": "50 lakhs INR",
+            "goal_investment": "6 Lakhs INR",
+            "investment_current_value": "8 Lakhs INR"
+        },
+        {
+            "name": "Save for Child's Higher Education",
+            "goal_percent": "60% goal reached in 3/5 years",
+            "target_date": "Aug 2022",
+            "investment_required": "50 lakhs INR",
+            "goal_investment": "5 Lakhs INR",
+            "investment_current_value": "7 Lakhs INR"
+        }
+    ]
+    },
+    {
+      "id": 6,
+      "name": "Osgood Baszniak",
+      "email": "obaszniak5@netvibes.com",
+      "wealthmanager": "Not Assigned",
+      "gender": "Male",
+      "age": "21",
+      "date": "10/25/2003",
+      "place": "Bultman",
+      "goals": [
+        {
+            "name": "Buy a House in a Villa Gated Community",
+            "goal_percent": "60% goal reached in 3/5 years",
+            "target_date": "Aug 2022",
+            "investment_required": "50 lakhs INR",
+            "goal_investment": "5 Lakhs INR",
+            "investment_current_value": "7 Lakhs INR"
+        },
+        {
+            "name": "Travel to Europe",
+            "goal_percent": "80% goal reached in 4/5 years",
+            "target_date": "Aug 2021",
+            "investment_required": "50 lakhs INR",
+            "goal_investment": "6 Lakhs INR",
+            "investment_current_value": "8 Lakhs INR"
+        },
+        {
+            "name": "Save for Child's Higher Education",
+            "goal_percent": "60% goal reached in 3/5 years",
+            "target_date": "Aug 2022",
+            "investment_required": "50 lakhs INR",
+            "goal_investment": "5 Lakhs INR",
+            "investment_current_value": "7 Lakhs INR"
+        }
+    ]
+    
+    },
+    {
+      "id": 7,
+      "name": "Alice Offin",
+      "email": "aoffin6@aol.com",
+      "wealthmanager": "Not Assigned",
+      "gender": "Female",
+      "age": "24",
+      "date": "9/27/2018",
+      "place": "Schiller"
+    },
+    {
+      "id": 8,
+      "name": "Patsy Pavelin",
+      "email": "ppavelin7@berkeley.edu",
+      "wealthmanager": "Sangeetha Sreenath",
+      "gender": "Male",
+      "age": "34",
+      "date": "11/26/2001",
+      "place": "Lukken"
+    },
+    {
+      "id": 9,
+      "name": "Alonzo Fallow",
+      "email": "afallow8@skyrock.com",
+      "wealthmanager": "Sangeetha Sreenath",
+      "gender": "Male",
+      "age": "23",
+      "date": "11/21/2018",
+      "place": "Clove"
+    },
+    {
+      "id": 10,
+      "name": "Faun Pales",
+      "email": "fpales9@wordpress.com",
+      "wealthmanager": "Sangeetha Sreenath",
+      "gender": "Female",
+      "age": "34",
+      "date": "8/26/2011",
+      "place": "Novick"
+    },
+    {
+      "id": 11,
+      "name": "Mab Rickaby",
+      "email": "mrickabya@fema.gov",
+      "wealthmanager": "Not Assigned",
+      "gender": "Female",
+      "age": "47",
+      "date": "6/22/2012",
+      "place": "Cordelia"
+    },
+    {
+      "id": 12,
+      "name": "Keary Offin",
+      "email": "koffinb@behance.net",
+      "wealthmanager": "Sangeetha Sreenath",
+      "gender": "Male",
+      "age": "32",
+      "date": "1/21/2018",
+      "place": "Messerschmidt"
+    }
+  ]
+  

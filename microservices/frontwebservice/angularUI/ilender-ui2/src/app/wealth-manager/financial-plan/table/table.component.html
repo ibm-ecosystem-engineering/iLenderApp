@@ -1,0 +1,83 @@
+<div>
+    Big Bank – Last 5 Transactions
+    <table>
+        <thead>
+            <tr>
+                <th *ngFor="let columns of columnTransHistory">{{columns}}</th>
+            </tr>
+        </thead>
+        <tbody>
+        <ng-container *ngFor="let rows of rowsTransHistory">
+            <tr *ngIf="rows.bankId == 1 ">
+                <td>{{rows.transDateString}}</td>
+                <td>{{rows.particulars}}</td>
+                <td>
+                    <ng-template [ngIf]="rows.withdrawl">
+                        {{rows.withdrawl}} &nbsp;&nbsp; {{currency}}
+                    </ng-template>
+                </td>
+                <td>
+                    <ng-template [ngIf]="rows.deposit">
+                        {{rows.deposit}} &nbsp;&nbsp; {{currency}}
+                    </ng-template>
+                </td>
+                <td>{{rows.balance}} &nbsp;&nbsp; {{currency}}</td>
+            </tr>
+        </ng-container>
+        </tbody>
+    </table>
+</div>
+<BR><BR><BR>
+<div>
+    Great Bank – Last 5 Transactions
+    <table>
+        <thead>
+            <tr>
+                <th *ngFor="let columns of columnTransHistory;">{{columns}}</th>
+            </tr>
+        </thead>
+        <tbody>
+        <ng-container *ngFor="let rows of rowsTransHistory">
+            <tr *ngIf="rows.bankId == 2 ">
+                <td>{{rows.transDateString}}</td>
+                <td>{{rows.particulars}}</td>
+                <td>
+                    <ng-template [ngIf]="rows.withdrawl">
+                        {{rows.withdrawl}} &nbsp;&nbsp; {{currency}}
+                    </ng-template>
+                </td>
+                <td>
+                    <ng-template [ngIf]="rows.deposit">
+                        {{rows.deposit}} &nbsp;&nbsp; {{currency}}
+                    </ng-template>
+                </td>
+                <td>{{rows.balance}} &nbsp;&nbsp; {{currency}}</td>
+            </tr>
+        </ng-container>
+        </tbody>
+    </table>
+</div>
+<BR><BR><BR>
+<div>
+    Loan History
+    <table>
+        <thead>
+            <tr>
+                <th *ngFor="let columns of columnLoanHistory">{{columns}}</th>
+            </tr>
+        </thead>
+        <tbody>
+        <ng-container *ngFor="let rows of rowsLoanHistory; let myIndex = index">
+            <tr >
+                <td>{{myIndex + 1}}</td>
+                <td>{{rows.loanDateString}}</td>
+                <td>{{rows.bankName}}</td>
+                <td>{{rows.purpose}}</td>
+                <td>{{rows.loanAmount}} &nbsp;&nbsp; {{currency}}</td>
+                <td>{{rows.paidAmount}} &nbsp;&nbsp; {{currency}}</td>
+                <td>{{rows.closeDateString}}</td>
+            </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</div>

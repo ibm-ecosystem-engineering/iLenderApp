@@ -1,0 +1,32 @@
+<!-- Users -->
+<div class="generalWrapper">
+    <div class="bx--grid">
+        <div class="bx--row">
+            <div class="bx--col">
+                <div class="user-list">
+                    <div ibmRow>
+                        <div ibmCol [columnNumbers]="{'md': 2, 'sm': 12}" *ngFor="let user of userDetails" class="users" (click)="openCustomerDetails(user)">
+                            <div class="userWrapper">
+                                <div class="layerOne">
+                                    <div class="userimage">
+                                        <img src="{{user.image}}" alt="">
+                                    </div>
+                                    <div class="details">
+                                        <div class="name">{{user.orgName}} </div>
+                                    </div>
+                                </div>
+                                <div class="innerDetailsWrapper">
+                                    <div class="age utClass">Company Id : {{user.orgId}}  |</div>
+                                    <div class="place utClass">Member since {{user.establishmentDateString}} |</div>
+                                    <div class="date utClass">Field Agent : {{user.fieldAgentName}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

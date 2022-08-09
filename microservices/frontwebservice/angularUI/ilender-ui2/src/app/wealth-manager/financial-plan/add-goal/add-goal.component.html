@@ -1,0 +1,40 @@
+<form class="addUserForm">
+    <div class="formTitle">Raise a Loan Request</div>
+
+    <div class="bx--form-item bx--text-input-wrapper" *ngIf="!selectedGoal">
+        <div class="bx--text-input__field-wrapper">
+            <input *ngIf="!selectedGoal" id="text-input-3" type="text" class="bx--text-input bx--text-input--light"
+                 [(ngModel)]="mainDataGoal.loanAmount" name="loanAmount" placeholder="Loan Amount Requested (in {{currency}})">
+        </div>
+    </div>
+
+    <div class="bx--form-item bx--text-input-wrapper" *ngIf="!selectedGoal">
+        <div class="bx--text-input__field-wrapper">
+            <input *ngIf="!selectedGoal" id="text-input-3" type="text" class="bx--text-input bx--text-input--light"
+                 [(ngModel)]="mainDataGoal.purpose" name="purpose" placeholder="Purpose of Loan">
+        </div>
+    </div>
+
+    <div class="bx--form-item bx--text-input-wrapper" *ngIf="!selectedGoal">
+        <div class="bx--text-input__field-wrapper">
+
+            <input id="text-input-3" type="text" class="bx--text-input bx--text-input--light"
+                 [(ngModel)]="mainDataGoal.duration" name="duration" placeholder="Duration">
+        </div>
+    </div>
+
+    <div class="bx--form-item bx--text-input-wrapper" *ngIf="!selectedGoal">
+        <div class="bx--text-input__field-wrapper">
+
+            <input *ngIf="!selectedGoal" id="text-input-3" type="text" class="bx--text-input bx--text-input--light"
+                 [(ngModel)]="mainDataGoal.loanRequestDate" name="loanRequestDate" placeholder="Start Date">
+        </div>
+    </div>
+
+    <div class="bx--form-item button-container">
+        <button class="bx--btn bx--btn--primary my-button" type="button" (click)="closeAddBlock(false)">Cancel</button>
+        <button *ngIf="!selectedGoal" class="bx--btn bx--btn--primary  my-button" type="button" (click)="saveLoanRequest()">Submit Request</button>
+    </div>
+
+
+</form>

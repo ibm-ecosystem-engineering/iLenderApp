@@ -1,0 +1,115 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: git-repo-ilender
+  namespace: ilender-tekton-ocp-ns
+  labels:
+    tag : git-repo-ilender
+spec:
+  type: git
+  params:
+    - name: revision
+      value: master
+    - name: url
+      value: https://github.ibm.com/SI-Lab-Apps/ilender.git
+---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: image-frontweb
+  namespace: ilender-tekton-ocp-ns
+spec:
+  type: image
+  params:
+    - name: url
+      value: gandigit/ilender-frontweb-all-ocp:0.0.1
+      # value: image-registry.openshift-image-registry.svc:5000/ilender-tekton-ocp-ns/ilender-frontweb:latest
+---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: image-user
+  namespace: ilender-tekton-ocp-ns
+spec:
+  type: image
+  params:
+    - name: url
+      value: gandigit/ilender-user-all-ocp:0.0.1
+---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: image-loan
+  namespace: ilender-tekton-ocp-ns
+spec:
+  type: image
+  params:
+    - name: url
+      value: gandigit/ilender-loan-all-ocp:0.0.1
+---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: image-loanprocessor
+  namespace: ilender-tekton-ocp-ns
+spec:
+  type: image
+  params:
+    - name: url
+      value: gandigit/ilender-loanprocessor-all-ocp:0.0.1
+---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: image-creditscore
+  namespace: ilender-tekton-ocp-ns
+spec:
+  type: image
+  params:
+    - name: url
+      value: gandigit/ilender-creditscore-all-ocp:0.0.1
+---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: image-customerprofile
+  namespace: ilender-tekton-ocp-ns
+spec:
+  type: image
+  params:
+    - name: url
+      value: gandigit/ilender-customerprofile-all-ocp:0.0.1
+---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: image-openbanking
+  namespace: ilender-tekton-ocp-ns
+spec:
+  type: image
+  params:
+    - name: url
+      value: gandigit/ilender-openbanking-all-ocp:0.0.1
+---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: image-bigbank
+  namespace: ilender-tekton-ocp-ns
+spec:
+  type: image
+  params:
+    - name: url
+      value: gandigit/ilender-bigbank-all-ocp:0.0.1
+---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: image-greatbank
+  namespace: ilender-tekton-ocp-ns
+spec:
+  type: image
+  params:
+    - name: url
+      value: gandigit/ilender-greatbank-all-ocp:0.0.1
+---

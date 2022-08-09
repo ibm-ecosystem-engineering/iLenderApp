@@ -1,0 +1,46 @@
+.customer-details-container{
+  padding: 10px 0px;
+  .header{
+      padding: 1rem 0 1rem 2.5rem !important;
+          font-size: 1rem;
+          span:first-child {
+              font-weight: 600;
+              color: #003399;
+          }
+  }
+}
+::ng-deep {
+  a.bx--tabs__nav-link {
+      font-size: 1.2rem;
+      width: auto !important;
+      padding: 0.5rem 2.5rem !important;
+      line-height: 1 !important;
+    }
+    .bx--tabs {
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      .bx--tabs__nav-item--selected:not(.bx--tabs__nav-item--disabled) .bx--tabs__nav-link {
+        font-size: 1.2rem;
+        width: auto !important;
+        line-height: 1 !important;
+      }
+    }
+    // @media (min-width: 42rem) {
+    //   .bx--col-md-2 {
+    //       flex: 0 0 30% !important;
+    //       max-width: 30% !important;
+    //   }
+    // }
+}
+.chartsSection {
+padding-top: 25px;
+display: flex;
+flex-wrap: wrap;
+.lhs {
+  width: 50%;
+}
+.rhs {
+  width: 50%;
+  // display: flex;
+  // align-items: flex-end;
+}
+}

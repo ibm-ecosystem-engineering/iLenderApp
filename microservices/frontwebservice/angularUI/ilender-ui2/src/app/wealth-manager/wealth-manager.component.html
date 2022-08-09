@@ -1,0 +1,59 @@
+    <wealthcare-header [userInfo]="userInfo"></wealthcare-header>
+<!-- Customer list -->
+<wealth-customer *ngIf="!financialEnabled" [userDetails]="customersList"
+  (variableToEmit)='displayCustomerdetails($event)'>
+</wealth-customer>
+
+<!-- customer details page -->
+
+<div class="customer-details-container" *ngIf="financialEnabled">
+  <!-- <div class="header">
+    <span class="cursor-pointer" (click)="openCustomers()">Customer -></span> 
+    <span *ngIf="customerDetails">{{customerDetails.name}}</span>
+  </div> -->
+  <div class="bx--grid">
+    <div class="bx--row">
+      <div class="bx--col">
+        <div class="breadCrumbs">
+          <ul>
+            <li>
+              <a (click)="openCustomers(customerDetails.id)">SMB Customer</a><span>></span>
+              <span *ngIf="customerDetails" class="current">{{customerDetails.orgName}}</span>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="bx--grid">
+      <div class="bx--row">
+        <div class="bx--col">
+          <ibm-tabs isNavigation="false" (tabSelected)="onFinancialPlanClick($event)">
+            <ibm-tab heading="Loans">
+              <div class="user-list">
+                <financial-plan [customersLoanList]="loanList" [financialEnabled]="financialEnabled">
+                </financial-plan>
+              </div>
+            </ibm-tab>
+            <ibm-tab heading="History">
+              <br><br>
+              <div class="user-list">
+                <br><br>
+                <app-table [columnLoanHistory]="columnLoanHistory" [rowsLoanHistory]="rowsLoanHistory" [columnTransHistory]="columnTransHistory" [rowsTransHistory]="rowsTransHistory">
+                </app-table>
+              </div>
+            </ibm-tab>
+            <ibm-tab heading="Profile">
+              <div class="user-list">
+                <div ibmRow>
+                </div>
+                <app-profile [customerDetails]="customerDetails"></app-profile>
+              </div>
+            </ibm-tab>
+          </ibm-tabs>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
