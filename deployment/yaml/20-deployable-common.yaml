@@ -26,21 +26,21 @@ metadata:
     subname: configmap
 data:
   # ## DB2
-  # datasourceUrl: jdbc:db2://1.2.3.4:12345/ilender
-  # datasourceUserName: 1
-  # datasourcePassword: 1
+  # datasourceUrl: jdbc:db2://1.1.1.1:12345/ilender
+  # datasourceUserName:
+  # datasourcePassword:
   # datasourceDriverClassName: com.ibm.db2.jcc.DB2Driver
   # datasourceJpaDatabasePlatform: org.hibernate.dialect.DB2Dialect
 
   # ## MySql
   # datasourceUrl: jdbc:jdbc:mysql://1.1.1.1:3306/ilender
-  # datasourceUserName: 1
-  # datasourcePassword: 1
+  # datasourceUserName:
+  # datasourcePassword:
 
   ## H2
   datasourceUrl: jdbc:h2:mem:/ilender
-  datasourceUserName: admin
-  datasourcePassword: admin
+  datasourceUserName: 
+  datasourcePassword: 
   datasourceDriverClassName: org.h2.Driver
   datasourceJpaDatabasePlatform: org.hibernate.dialect.H2Dialect
 ---
